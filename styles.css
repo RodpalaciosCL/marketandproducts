@@ -198,20 +198,33 @@ body {
 .hero-layout {
   display: grid;
   gap: 2.5rem;
-  align-items: center;
+  align-items: start;
 }
 
 @media (min-width: 900px) {
   .hero-layout {
     grid-template-columns: minmax(200px, 280px) 1fr;
     gap: 3.5rem;
+    align-items: center;
   }
 }
 
 .hero-logo-wrap {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  transform: translateY(-2.5rem);
+}
+
+@media (min-width: 900px) {
+  .hero-logo-wrap {
+    align-self: center;
+    transform: translateY(-9.5rem);
+  }
+
+  .hero-content {
+    align-self: center;
+  }
 }
 
 .hero-logo {
@@ -219,6 +232,19 @@ body {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5));
+}
+
+.hero-logo.fade-up {
+  animation: fadeUpSoft 0.7s ease forwards;
+}
+
+@keyframes fadeUpSoft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .hero-content {
