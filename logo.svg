@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-label="Market and Products">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#e8c468"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="8" width="32" height="32" rx="8" fill="url(#g)" opacity="0.9"/>
+  <text x="8" y="30" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#060a12">M</text>
+  <text x="42" y="22" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f0f4fc" letter-spacing="0.02em">market</text>
+  <text x="42" y="38" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#8b9cb8" letter-spacing="0.02em">&amp; products</text>
+</svg>
