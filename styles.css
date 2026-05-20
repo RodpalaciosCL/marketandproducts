@@ -235,18 +235,23 @@ body {
 }
 
 .hero-title {
-  font-family: var(--font-head);
-  font-size: clamp(1.85rem, 4.2vw, 2.85rem);
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.35rem, 5.5vw, 3.75rem);
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
   color: var(--text);
 }
 
-.hero-title .highlight {
-  color: var(--sage-light);
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-accent {
+  font-style: italic;
   font-weight: 600;
+  color: var(--sage-light);
 }
 
 .hero-lead {
