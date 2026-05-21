@@ -1,6 +1,7 @@
 (function () {
   const STRINGS = {
     en: {
+      'brand-name': 'Market and Products',
       'brand-tagline': 'Market-fit products',
       'nav-industries': 'Industries',
       'nav-approach': 'Approach',
@@ -42,15 +43,53 @@
         'Every engagement starts with market fit: who pays, what decision they make, and which constraints are non-negotiable.',
       'approach-p2':
         'Then we ship — lean architecture, measurable outcomes, and products your teams actually adopt.',
+      'approach-p3':
+        'Three phases, one thread: understand the market, design the fit, deliver and learn in production.',
+      'approach-cta': 'Talk to us about your product',
       'step1-title': 'Discover',
       'step1-desc': 'Industry, buyers, and regulatory landscape.',
+      'step1-detail':
+        'We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.',
+      'step1-t1': 'Research',
+      'step1-t2': 'ICP',
+      'step1-t3': 'Compliance',
+      'step1-phase': 'Phase 01',
       'step2-title': 'Design fit',
       'step2-desc': 'Product scope tied to market economics.',
+      'step2-detail':
+        'Scope, pricing logic, and milestones are anchored to how the market actually buys — not internal wishlists.',
+      'step2-t1': 'Scope',
+      'step2-t2': 'Economics',
+      'step2-t3': 'Roadmap',
+      'step2-phase': 'Phase 02',
       'step3-title': 'Build & evolve',
       'step3-desc': 'Ship, measure, iterate with domain experts.',
+      'step3-detail':
+        'We release in tight loops with instrumentation, adoption metrics, and domain experts validating every increment.',
+      'step3-t1': 'Ship',
+      'step3-t2': 'Metrics',
+      'step3-t3': 'Iterate',
+      'step3-phase': 'Phase 03',
+      'step-cta': 'Market-fit lens',
+      'contact-title': 'Want to see our products?',
+      'contact-sub':
+        'Tell us about your market and industry — we’ll get back with relevant examples and next steps.',
+      'contact-name': 'Full name',
+      'contact-email': 'Work email',
+      'contact-company': 'Company',
+      'contact-industry': 'Industry',
+      'contact-industry-placeholder': 'Select…',
+      'contact-industry-other': 'Other',
+      'contact-message': 'What are you looking to build?',
+      'contact-hint': 'We typically reply within 1–2 business days.',
+      'contact-note': 'Market-fit discovery call',
+      'contact-submit': 'Contact us',
+      'contact-success': 'Thanks — your email app should open with the message ready to send.',
+      'contact-error': 'Please fill in all required fields with a valid email.',
       'footer-by': 'by'
     },
     es: {
+      'brand-name': 'Market and Products',
       'brand-tagline': 'Productos market-fit',
       'nav-industries': 'Industrias',
       'nav-approach': 'Enfoque',
@@ -92,12 +131,49 @@
         'Cada proyecto parte del market fit: quién paga, qué decisión toma y qué restricciones no se negocian.',
       'approach-p2':
         'Luego entregamos — arquitectura lean, resultados medibles y productos que tu equipo adopta.',
+      'approach-p3':
+        'Tres fases, un hilo: entender el mercado, diseñar el fit y aprender en producción.',
+      'approach-cta': 'Conversemos sobre tu producto',
       'step1-title': 'Descubrir',
       'step1-desc': 'Industria, compradores y marco regulatorio.',
+      'step1-detail':
+        'Mapeamos actores, disparadores de compra y límites de cumplimiento antes de escribir una especificación.',
+      'step1-t1': 'Research',
+      'step1-t2': 'ICP',
+      'step1-t3': 'Cumplimiento',
+      'step1-phase': 'Fase 01',
       'step2-title': 'Diseñar el fit',
       'step2-desc': 'Alcance del producto atado a la economía del mercado.',
+      'step2-detail':
+        'Alcance, lógica de precio e hitos se anclan a cómo compra el mercado — no a listas internas.',
+      'step2-t1': 'Alcance',
+      'step2-t2': 'Economía',
+      'step2-t3': 'Roadmap',
+      'step2-phase': 'Fase 02',
       'step3-title': 'Construir y evolucionar',
       'step3-desc': 'Entregar, medir e iterar con expertos de dominio.',
+      'step3-detail':
+        'Liberamos en ciclos cortos con instrumentación, métricas de adopción y expertos validando cada incremento.',
+      'step3-t1': 'Entrega',
+      'step3-t2': 'Métricas',
+      'step3-t3': 'Iterar',
+      'step3-phase': 'Fase 03',
+      'step-cta': 'Lente market-fit',
+      'contact-title': '¿Quieres ver nuestros productos?',
+      'contact-sub':
+        'Cuéntanos tu mercado e industria — te respondemos con ejemplos relevantes y próximos pasos.',
+      'contact-name': 'Nombre completo',
+      'contact-email': 'Email corporativo',
+      'contact-company': 'Empresa',
+      'contact-industry': 'Industria',
+      'contact-industry-placeholder': 'Seleccionar…',
+      'contact-industry-other': 'Otra',
+      'contact-message': '¿Qué producto o solución buscas construir?',
+      'contact-hint': 'Solemos responder en 1–2 días hábiles.',
+      'contact-note': 'Llamada de discovery market-fit',
+      'contact-submit': 'Contactar',
+      'contact-success': 'Gracias — se abrirá tu correo con el mensaje listo para enviar.',
+      'contact-error': 'Completa los campos obligatorios con un email válido.',
       'footer-by': 'por'
     }
   };
@@ -123,4 +199,57 @@
   });
 
   applyLang(lang);
+
+  const CONTACT_EMAIL = 'contacto@marketandproducts.com';
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('contact-status');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const langNow = localStorage.getItem('mp-lang') || 'en';
+      const msg = STRINGS[langNow] || STRINGS.en;
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const company = form.company.value.trim();
+      const industry = form.industry.value;
+      const message = form.message.value.trim();
+
+      if (!name || !email || !industry || !message || !email.includes('@')) {
+        if (statusEl) {
+          statusEl.textContent = msg['contact-error'];
+          statusEl.classList.remove('hidden', 'is-success');
+          statusEl.classList.add('is-error');
+        }
+        return;
+      }
+
+      const industryLabel =
+        form.industry.options[form.industry.selectedIndex]?.textContent || industry;
+      const subject = encodeURIComponent(
+        langNow === 'es' ? 'Consulta — Market and Products' : 'Inquiry — Market and Products'
+      );
+      const body = encodeURIComponent(
+        [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          company ? `Company: ${company}` : '',
+          `Industry: ${industryLabel}`,
+          '',
+          message
+        ]
+          .filter(Boolean)
+          .join('\n')
+      );
+
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+      if (statusEl) {
+        statusEl.textContent = msg['contact-success'];
+        statusEl.classList.remove('hidden', 'is-error');
+        statusEl.classList.add('is-success');
+      }
+    });
+  }
 })();
