@@ -196,7 +196,7 @@ body {
 .hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-h) + 3rem) 0 4.5rem;
+  padding: calc(var(--header-h) + 4.75rem) 0 4.5rem;
 }
 
 .hero-layout {
