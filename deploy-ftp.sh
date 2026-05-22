@@ -11,7 +11,7 @@ echo "Usuario: $USER"
 echo "Te pedirá la contraseña FTP (la de Hestia / Additional FTP)."
 echo ""
 
-for f in index.html styles.css script.js logo.png; do
+for f in index.html styles.css script.js neural-bg.js logo.png; do
   if [[ ! -f "$f" ]]; then
     echo "Falta archivo: $f"
     exit 1

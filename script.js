@@ -39,38 +39,27 @@
       'ind-more-desc':
         'Manufacturing, public sector, telecom, construction tech — if the market has rules, we map the product to them.',
       'approach-title': 'How we work',
-      'approach-p1':
-        'Every engagement starts with market fit: who pays, what decision they make, and which constraints are non-negotiable.',
-      'approach-p2':
-        'Then we ship — lean architecture, measurable outcomes, and products your teams actually adopt.',
-      'approach-p3':
-        'Three phases, one thread: understand the market, design the fit, deliver and learn in production.',
+      'approach-sub':
+        'We start with market fit — who pays, what they decide, and what cannot move — then ship lean products your teams actually adopt.',
       'approach-cta': 'Talk to us about your product',
       'step1-title': 'Discover',
-      'step1-desc': 'Industry, buyers, and regulatory landscape.',
       'step1-detail':
         'We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.',
       'step1-t1': 'Research',
       'step1-t2': 'ICP',
       'step1-t3': 'Compliance',
-      'step1-phase': 'Phase 01',
       'step2-title': 'Design fit',
-      'step2-desc': 'Product scope tied to market economics.',
       'step2-detail':
         'Scope, pricing logic, and milestones are anchored to how the market actually buys — not internal wishlists.',
       'step2-t1': 'Scope',
       'step2-t2': 'Economics',
       'step2-t3': 'Roadmap',
-      'step2-phase': 'Phase 02',
       'step3-title': 'Build & evolve',
-      'step3-desc': 'Ship, measure, iterate with domain experts.',
       'step3-detail':
         'We release in tight loops with instrumentation, adoption metrics, and domain experts validating every increment.',
       'step3-t1': 'Ship',
       'step3-t2': 'Metrics',
       'step3-t3': 'Iterate',
-      'step3-phase': 'Phase 03',
-      'step-cta': 'Market-fit lens',
       'contact-title': 'Want to see our products?',
       'contact-sub':
         'Tell us about your market and industry — we’ll get back with relevant examples and next steps.',
@@ -127,38 +116,27 @@
       'ind-more-desc':
         'Manufactura, sector público, telecom, construcción — si el mercado tiene reglas, mapeamos el producto a ellas.',
       'approach-title': 'Cómo trabajamos',
-      'approach-p1':
-        'Cada proyecto parte del market fit: quién paga, qué decisión toma y qué restricciones no se negocian.',
-      'approach-p2':
-        'Luego entregamos — arquitectura lean, resultados medibles y productos que tu equipo adopta.',
-      'approach-p3':
-        'Tres fases, un hilo: entender el mercado, diseñar el fit y aprender en producción.',
+      'approach-sub':
+        'Partimos del market fit — quién paga, qué decide y qué no se mueve — y entregamos productos lean que tu equipo adopta.',
       'approach-cta': 'Conversemos sobre tu producto',
       'step1-title': 'Descubrir',
-      'step1-desc': 'Industria, compradores y marco regulatorio.',
       'step1-detail':
         'Mapeamos actores, disparadores de compra y límites de cumplimiento antes de escribir una especificación.',
       'step1-t1': 'Research',
       'step1-t2': 'ICP',
       'step1-t3': 'Cumplimiento',
-      'step1-phase': 'Fase 01',
       'step2-title': 'Diseñar el fit',
-      'step2-desc': 'Alcance del producto atado a la economía del mercado.',
       'step2-detail':
         'Alcance, lógica de precio e hitos se anclan a cómo compra el mercado — no a listas internas.',
       'step2-t1': 'Alcance',
       'step2-t2': 'Economía',
       'step2-t3': 'Roadmap',
-      'step2-phase': 'Fase 02',
       'step3-title': 'Construir y evolucionar',
-      'step3-desc': 'Entregar, medir e iterar con expertos de dominio.',
       'step3-detail':
         'Liberamos en ciclos cortos con instrumentación, métricas de adopción y expertos validando cada incremento.',
       'step3-t1': 'Entrega',
       'step3-t2': 'Métricas',
       'step3-t3': 'Iterar',
-      'step3-phase': 'Fase 03',
-      'step-cta': 'Lente market-fit',
       'contact-title': '¿Quieres ver nuestros productos?',
       'contact-sub':
         'Cuéntanos tu mercado e industria — te respondemos con ejemplos relevantes y próximos pasos.',
@@ -199,6 +177,29 @@
   });
 
   applyLang(lang);
+
+  const nav = document.getElementById('main-nav');
+  const navToggle = document.getElementById('nav-toggle');
+  const closeNav = () => {
+    if (!nav || !navToggle) return;
+    nav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
+
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
+    });
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeNav);
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 767) closeNav();
+    });
+  }
 
   const CONTACT_EMAIL = 'contacto@marketandproducts.com';
   const form = document.getElementById('contact-form');

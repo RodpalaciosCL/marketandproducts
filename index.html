@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Market and Products — Products built for real markets</title>
   <meta name="description"
     content="We design and build products that fit specific markets and industries — mining, retail, financial services, oil &amp; gas, agro, health, and beyond." />
@@ -12,11 +12,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=19" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
 <body>
+  <canvas id="neural-bg" class="neural-bg" aria-hidden="true"></canvas>
   <div class="bg-mesh" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
 
@@ -29,15 +30,21 @@
           <span data-i18n="brand-tagline">Market-fit products</span>
         </span>
       </a>
-      <nav class="nav" aria-label="Main">
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false"
+          aria-controls="main-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="nav" id="main-nav" aria-label="Main">
         <a href="#industries" data-i18n="nav-industries">Industries</a>
         <a href="#approach" data-i18n="nav-approach">Approach</a>
         <a href="#contact" class="nav-cta" data-i18n="nav-contact">Contact</a>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" class="lang-btn active" data-lang="en">EN</button>
-        <button type="button" class="lang-btn" data-lang="es">ES</button>
-      </div>
     </div>
   </header>
 
@@ -176,45 +183,13 @@
     </section>
 
     <section class="approach" id="approach">
-      <div class="container approach-layout">
-        <header class="approach-intro">
-          <div class="approach-intro-panel">
-            <h2 data-i18n="approach-title">How we work</h2>
-            <p data-i18n="approach-p1">
-              Every engagement starts with market fit: who pays, what decision they make, and which constraints are non-negotiable.
-            </p>
-            <p data-i18n="approach-p2">
-              Then we ship — lean architecture, measurable outcomes, and products your teams actually adopt.
-            </p>
-            <ul class="approach-highlights" aria-label="Process overview">
-              <li>
-                <span class="approach-highlights__num">01</span>
-                <div>
-                  <strong data-i18n="step1-title">Discover</strong>
-                  <span data-i18n="step1-desc">Industry, buyers, and regulatory landscape.</span>
-                </div>
-              </li>
-              <li>
-                <span class="approach-highlights__num">02</span>
-                <div>
-                  <strong data-i18n="step2-title">Design fit</strong>
-                  <span data-i18n="step2-desc">Product scope tied to market economics.</span>
-                </div>
-              </li>
-              <li>
-                <span class="approach-highlights__num">03</span>
-                <div>
-                  <strong data-i18n="step3-title">Build &amp; evolve</strong>
-                  <span data-i18n="step3-desc">Ship, measure, iterate with domain experts.</span>
-                </div>
-              </li>
-            </ul>
-            <p class="approach-intro-note" data-i18n="approach-p3">
-              Three phases, one thread: understand the market, design the fit, deliver and learn in production.
-            </p>
-            <a href="#contact" class="approach-intro-cta" data-i18n="approach-cta">Talk to us about your product</a>
-          </div>
-        </header>
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="approach-title">How we work</h2>
+          <p data-i18n="approach-sub">
+            We start with market fit — who pays, what they decide, and what cannot move — then ship lean products your teams actually adopt.
+          </p>
+        </div>
         <ol class="process-grid">
           <li>
             <article class="process-card">
@@ -223,17 +198,12 @@
                 <svg class="process-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
               </div>
               <div class="process-card__title"><h3 data-i18n="step1-title">Discover</h3></div>
-              <p class="process-card__lead" data-i18n="step1-desc">Industry, buyers, and regulatory landscape.</p>
               <p class="process-card__detail" data-i18n="step1-detail">We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.</p>
               <ul class="process-card__tags" aria-label="Focus areas">
                 <li><span data-i18n="step1-t1">Research</span></li>
                 <li><span data-i18n="step1-t2">ICP</span></li>
                 <li><span data-i18n="step1-t3">Compliance</span></li>
               </ul>
-              <div class="process-card__action">
-                <span class="process-card__phase" data-i18n="step1-phase">Phase 01</span>
-                <span class="process-card__cta" data-i18n="step-cta">Market-fit lens</span>
-              </div>
             </article>
           </li>
           <li>
@@ -243,17 +213,12 @@
                 <svg class="process-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18v2H3v-2zm0-6h18v2H3v-2zm0-6h18v2H3V5z"/></svg>
               </div>
               <div class="process-card__title"><h3 data-i18n="step2-title">Design fit</h3></div>
-              <p class="process-card__lead" data-i18n="step2-desc">Product scope tied to market economics.</p>
               <p class="process-card__detail" data-i18n="step2-detail">Scope, pricing logic, and milestones are anchored to how the market actually buys — not internal wishlists.</p>
               <ul class="process-card__tags" aria-label="Focus areas">
                 <li><span data-i18n="step2-t1">Scope</span></li>
                 <li><span data-i18n="step2-t2">Economics</span></li>
                 <li><span data-i18n="step2-t3">Roadmap</span></li>
               </ul>
-              <div class="process-card__action">
-                <span class="process-card__phase" data-i18n="step2-phase">Phase 02</span>
-                <span class="process-card__cta" data-i18n="step-cta">Market-fit lens</span>
-              </div>
             </article>
           </li>
           <li>
@@ -263,20 +228,18 @@
                 <svg class="process-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7l3-7z"/></svg>
               </div>
               <div class="process-card__title"><h3 data-i18n="step3-title">Build &amp; evolve</h3></div>
-              <p class="process-card__lead" data-i18n="step3-desc">Ship, measure, iterate with domain experts.</p>
               <p class="process-card__detail" data-i18n="step3-detail">We release in tight loops with instrumentation, adoption metrics, and domain experts validating every increment.</p>
               <ul class="process-card__tags" aria-label="Focus areas">
                 <li><span data-i18n="step3-t1">Ship</span></li>
                 <li><span data-i18n="step3-t2">Metrics</span></li>
                 <li><span data-i18n="step3-t3">Iterate</span></li>
               </ul>
-              <div class="process-card__action">
-                <span class="process-card__phase" data-i18n="step3-phase">Phase 03</span>
-                <span class="process-card__cta" data-i18n="step-cta">Market-fit lens</span>
-              </div>
             </article>
           </li>
         </ol>
+        <div class="approach-foot">
+          <a href="#contact" class="approach-cta" data-i18n="approach-cta">Talk to us about your product</a>
+        </div>
       </div>
     </section>
 
@@ -355,6 +318,15 @@
     </div>
   </footer>
 
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="neural-bg.js"></script>
   <script src="script.js"></script>
 </body>
 
