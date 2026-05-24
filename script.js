@@ -12,7 +12,7 @@
       'hero-line2': 'fit the market',
       'hero-line3': 'and your industry.',
       'hero-lead':
-        'We dedicate ourselves to building products tuned to each sector — regulations, workflows, and economics included — not one-size-fits-all templates.',
+        'We dedicate ourselves to building products tuned to each sector, regulations, workflows, and economics included, not one-size-fits-all templates.',
       'hero-cta': 'Explore industries',
       'hero-cta2': 'Start a conversation',
       'hero-metrics-label': 'Focus',
@@ -46,7 +46,9 @@
       'approach-title': 'How we work',
       'approach-label': 'Process',
       'approach-sub':
-        'We start with market fit — who pays, what they decide, and what cannot move — then ship lean products your teams actually adopt.',
+        'We start with market fit, who pays, what they decide, and what cannot move, then ship lean products your teams actually adopt.',
+      'approach-focus': ' We focus on ',
+      'approach-etc': ', etc...',
       'step1-title': 'Discover',
       'step1-detail':
         'We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.',
@@ -150,7 +152,9 @@
       'approach-title': 'Cómo trabajamos',
       'approach-label': 'Proceso',
       'approach-sub':
-        'Partimos del market fit — quién paga, qué decide y qué no se mueve — y entregamos productos lean que tu equipo adopta.',
+        'Partimos del market fit, quién paga, qué decide y qué no se mueve, y entregamos productos lean que tu equipo adopta.',
+      'approach-focus': ' Nos enfocamos en ',
+      'approach-etc': ', etc...',
       'step1-title': 'Descubrir',
       'step1-detail':
         'Mapeamos actores, disparadores de compra y límites de cumplimiento antes de escribir una especificación.',
