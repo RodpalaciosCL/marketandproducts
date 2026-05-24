@@ -1,0 +1,19 @@
+---
+description: Alcance del repo Market and Products — no mezclar con Archlytic
+alwaysApply: true
+---
+
+# Repo: Market and Products
+
+Este repositorio es **solo** la landing de https://marketandproducts.com/:
+
+- `index.html`, `styles.css`, `script.js`, `neural-bg.js`, `logo.png`
+- Deploy: `deploy-ftp.sh` → raíz de `public_html/`
+
+**No** añadas el motor Archlytic ni código de `app/`. Archlytic es otro repo:
+
+- https://github.com/RodpalaciosCL/archlytic
+- Ruta local típica: `~/Repos/Archlytic`
+- En producción: `/Archlytic/` (subcarpeta del mismo dominio)
+
+Si el usuario pide cambios al motor o landing Archlytic, trabaja en ese repo, no aquí.

@@ -18,6 +18,8 @@ Abre http://127.0.0.1:8765/
 
 Sube a `public_html/` del dominio (cuenta FTP `admin_archlytic`). Ver `DEPLOY.md`.
 
+Referencia de diseño (Uiverse card): `DESIGN.html` (no se despliega).
+
 ## Repo relacionado
 
-- **Archlytic** (producto): https://github.com/RodpalaciosCL/Archlytic — se sirve en `/Archlytic/` del mismo dominio.
+- **Archlytic** (producto): https://github.com/RodpalaciosCL/archlytic — se sirve en `/Archlytic/` del mismo dominio.

@@ -32,4 +32,4 @@ Variables opcionales: `FTP_HOST`, `FTP_USER`. La contraseña se pide por consola
 
 ## Archlytic (otro repo)
 
-El motor Archlytic **no** va en la raíz de este dominio. Vive en `/Archlytic/` y se despliega desde el repo [Archlytic](https://github.com/RodpalaciosCL/Archlytic).
+El motor Archlytic **no** va en la raíz de este dominio. Vive en `/Archlytic/` y se despliega desde el repo [archlytic](https://github.com/RodpalaciosCL/archlytic).
