@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css?v=42" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
@@ -24,7 +24,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="brand" aria-label="Market and Products home">
-        <img src="logo.png" alt="" class="brand-mark" width="44" height="44" />
+        <img src="logo.png" alt="" class="brand-mark" width="40" height="40" />
         <span class="brand-text">
           <strong data-i18n="brand-name">Market and Products</strong>
           <span data-i18n="brand-tagline">Market-fit products</span>
@@ -43,22 +43,20 @@
       <nav class="nav" id="main-nav" aria-label="Main">
         <a href="#industries" data-i18n="nav-industries">Industries</a>
         <a href="#approach" data-i18n="nav-approach">Approach</a>
+        <a href="#products" data-i18n="nav-products">Products</a>
         <a href="#contact" class="nav-cta" data-i18n="nav-contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-layout">
-        <div class="hero-logo-wrap">
-          <img src="logo.png" alt="Market &amp; Products" class="hero-logo fade-up" width="280" height="280" />
-        </div>
-        <div class="hero-content">
-          <p class="eyebrow fade-up delay-1" data-i18n="hero-eyebrow">We build products aligned with real markets</p>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="section-label fade-up" data-i18n="hero-eyebrow">We build products aligned with real markets</span>
           <h1 class="hero-title fade-up delay-1">
             <span class="hero-title-line" data-i18n="hero-line1">Products that</span>
-            <em class="hero-title-line hero-title-accent" data-i18n="hero-line2">fit the market</em>
+            <em class="hero-title-accent" data-i18n="hero-line2">fit the market</em>
             <span class="hero-title-line" data-i18n="hero-line3">and your industry.</span>
           </h1>
           <p class="hero-lead fade-up delay-2" data-i18n="hero-lead">
@@ -66,125 +64,115 @@
           </p>
           <div class="hero-actions fade-up delay-3">
             <a href="#industries" class="btn btn-primary" data-i18n="hero-cta">Explore industries</a>
-            <a href="#contact" class="btn btn-ghost" data-i18n="hero-cta2">Start a conversation</a>
-          </div>
-          <div class="hero-stats fade-up delay-4" aria-hidden="true">
-            <div class="stat"><span class="stat-num">6+</span><span class="stat-label" data-i18n="stat-sectors">Core sectors</span></div>
-            <div class="stat-divider"></div>
-            <div class="stat"><span class="stat-num">B2B</span><span class="stat-label" data-i18n="stat-focus">Enterprise focus</span></div>
-            <div class="stat-divider"></div>
-            <div class="stat"><span class="stat-num">Global</span><span class="stat-label" data-i18n="stat-region">Delivery</span></div>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero-cta2">Start a conversation</a>
           </div>
         </div>
+        <aside class="hero-aside fade-up delay-2" aria-label="Key metrics">
+          <div class="hero-panel">
+            <div class="hero-panel__glow" aria-hidden="true"></div>
+            <div class="hero-panel__logo-wrap">
+              <img src="logo.png" alt="" class="hero-panel__logo" width="80" height="80" />
+            </div>
+            <ul class="hero-panel__stats">
+              <li><strong>8</strong><span data-i18n="stat-sectors">Core sectors</span></li>
+              <li><strong>B2A</strong><span data-i18n="stat-focus">Enterprise focus</span></li>
+              <li><strong>8+</strong><span data-i18n="hero-highlight">Products</span></li>
+              <li><strong>Global</strong><span data-i18n="stat-region">Delivery</span></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="industries" id="industries">
+    <section class="industries section--alt" id="industries">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head section-head--center">
+          <span class="section-label" data-i18n="industries-label">Industries</span>
           <h2 data-i18n="industries-title">Industries we serve</h2>
           <p data-i18n="industries-sub">Deep domain context — from pit to patient, shelf to wellhead.</p>
         </div>
         <ul class="industry-grid">
           <li class="industry-item" data-sector="mining">
-            <article class="sector-card">
+            <article class="sector-card" title="Mining">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-3.5 6H6l4 8 3.5-6H18l-4-8z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-mining">Mining</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-mining-desc">Operations, compliance &amp; asset intelligence underground and open-pit.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>Ops</span><span>HSE</span><span>Assets</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-mining">Mining</h3>
+              <p class="sr-only" data-i18n="ind-mining-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="retail">
-            <article class="sector-card">
+            <article class="sector-card" title="Retail">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12L6 6zm2 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM4 4h2v2H4V4z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-retail">Retail</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-retail-desc">Omnichannel, inventory rhythm, and margin-aware merchandising.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>O2O</span><span>Stock</span><span>Margin</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-retail">Retail</h3>
+              <p class="sr-only" data-i18n="ind-retail-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="finance">
-            <article class="sector-card">
+            <article class="sector-card" title="Financial Services">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zm-4 4h2v-2H3v2zm4 0h14v-2H7v2zM3 5h2V3H3v2zm4 6h14V9H7v2z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-finance">Financial Services</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-finance-desc">Risk, reporting, and regulated workflows without friction.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>Risk</span><span>Reg</span><span>Data</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-finance">Financial Services</h3>
+              <p class="sr-only" data-i18n="ind-finance-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="oilgas">
-            <article class="sector-card">
+            <article class="sector-card" title="Oil &amp; Gas">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C9 7 6 8 6 12a6 6 0 0 0 12 0c0-4-3-5-6-10zm0 18a3 3 0 0 1-3-3h6a3 3 0 0 1-3 3z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-oilgas">Oil &amp; Gas</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-oilgas-desc">Field logistics, HSE, and capital-intensive project control.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>Field</span><span>CAPEX</span><span>HSE</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-oilgas">Oil &amp; Gas</h3>
+              <p class="sr-only" data-i18n="ind-oilgas-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="agro">
-            <article class="sector-card">
+            <article class="sector-card" title="Agro">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c-4-3-7-7-7-11a7 7 0 0 1 14 0c0 4-3 8-7 11zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-agro">Agro</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-agro-desc">Seasonality, traceability, and supply chain from farm to port.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>Trace</span><span>Season</span><span>Port</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-agro">Agro</h3>
+              <p class="sr-only" data-i18n="ind-agro-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="health">
-            <article class="sector-card">
+            <article class="sector-card" title="Health">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 14h-2v-4H6v-2h4V7h2v4h4v2h-4v4z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-health">Health</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-health-desc">Clinical pathways, privacy-by-design, and operational clarity.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>HIPAA</span><span>Ops</span><span>Care</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-health">Health</h3>
+              <p class="sr-only" data-i18n="ind-health-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="energy">
-            <article class="sector-card">
+            <article class="sector-card" title="Energy &amp; Utilities">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-energy">Energy &amp; Utilities</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-energy-desc">Grid, renewables, and reliability under regulatory pressure.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>Grid</span><span>RE</span><span>SLA</span></div>
+              <h3 class="sector-card__title" data-i18n="ind-energy">Energy &amp; Utilities</h3>
+              <p class="sr-only" data-i18n="ind-energy-desc"></p>
             </article>
           </li>
           <li class="industry-item" data-sector="logistics">
-            <article class="sector-card">
+            <article class="sector-card" title="Logistics">
               <div class="sector-card__visual">
                 <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 18.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM6 18.5A1.5 1.5 0 1 1 3 18.5a1.5 1.5 0 0 1 3 0zM20 8h-3V4H3v11h1.05a2.5 2.5 0 0 1 4.9 0H14a2.5 2.5 0 0 1 4.95 0H20V8z"/></svg>
               </div>
-              <div class="sector-card__title"><h3 data-i18n="ind-logistics">Logistics</h3></div>
-              <p class="sector-card__desc" data-i18n="ind-logistics-desc">Fleet, warehouse, and last-mile visibility end to end.</p>
-              <div class="sector-card__tags" aria-hidden="true"><span>Fleet</span><span>WMS</span><span>Last mile</span></div>
-            </article>
-          </li>
-          <li class="industry-item industry-item--wide" data-sector="more">
-            <article class="sector-card sector-card--wide">
-              <div class="sector-card__visual">
-                <svg class="sector-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
-              </div>
-              <div class="sector-card__body">
-                <div class="sector-card__title"><h3 data-i18n="ind-more">And more</h3></div>
-                <p class="sector-card__desc" data-i18n="ind-more-desc">Manufacturing, public sector, telecom, construction tech — if the market has rules, we map the product to them.</p>
-                <div class="sector-card__tags" aria-hidden="true"><span>MFG</span><span>Public</span><span>Telco</span><span>PropTech</span></div>
-              </div>
+              <h3 class="sector-card__title" data-i18n="ind-logistics">Logistics</h3>
+              <p class="sr-only" data-i18n="ind-logistics-desc"></p>
             </article>
           </li>
         </ul>
+        <p class="industries-footnote" data-i18n="ind-footnote">Manufacturing, public sector, telecom, construction tech — and more.</p>
       </div>
     </section>
 
     <section class="approach" id="approach">
       <div class="container">
         <div class="section-head">
+          <span class="section-label section-label--warm" data-i18n="approach-label">Process</span>
           <h2 data-i18n="approach-title">How we work</h2>
           <p data-i18n="approach-sub">
             We start with market fit — who pays, what they decide, and what cannot move — then ship lean products your teams actually adopt.
@@ -193,11 +181,7 @@
         <ol class="process-grid">
           <li>
             <article class="process-card">
-              <div class="process-card__visual">
-                <span class="process-card__step" aria-hidden="true">01</span>
-                <svg class="process-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-              </div>
-              <div class="process-card__title"><h3 data-i18n="step1-title">Discover</h3></div>
+              <header class="process-card__head"><span class="process-card__num" aria-hidden="true">01</span><h3 data-i18n="step1-title">Discover</h3></header>
               <p class="process-card__detail" data-i18n="step1-detail">We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.</p>
               <ul class="process-card__tags" aria-label="Focus areas">
                 <li><span data-i18n="step1-t1">Research</span></li>
@@ -208,11 +192,7 @@
           </li>
           <li>
             <article class="process-card">
-              <div class="process-card__visual">
-                <span class="process-card__step" aria-hidden="true">02</span>
-                <svg class="process-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18v2H3v-2zm0-6h18v2H3v-2zm0-6h18v2H3V5z"/></svg>
-              </div>
-              <div class="process-card__title"><h3 data-i18n="step2-title">Design fit</h3></div>
+              <header class="process-card__head"><span class="process-card__num" aria-hidden="true">02</span><h3 data-i18n="step2-title">Design fit</h3></header>
               <p class="process-card__detail" data-i18n="step2-detail">Scope, pricing logic, and milestones are anchored to how the market actually buys — not internal wishlists.</p>
               <ul class="process-card__tags" aria-label="Focus areas">
                 <li><span data-i18n="step2-t1">Scope</span></li>
@@ -223,11 +203,7 @@
           </li>
           <li>
             <article class="process-card">
-              <div class="process-card__visual">
-                <span class="process-card__step" aria-hidden="true">03</span>
-                <svg class="process-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7l3-7z"/></svg>
-              </div>
-              <div class="process-card__title"><h3 data-i18n="step3-title">Build &amp; evolve</h3></div>
+              <header class="process-card__head"><span class="process-card__num" aria-hidden="true">03</span><h3 data-i18n="step3-title">Build &amp; evolve</h3></header>
               <p class="process-card__detail" data-i18n="step3-detail">We release in tight loops with instrumentation, adoption metrics, and domain experts validating every increment.</p>
               <ul class="process-card__tags" aria-label="Focus areas">
                 <li><span data-i18n="step3-t1">Ship</span></li>
@@ -237,71 +213,173 @@
             </article>
           </li>
         </ol>
-        <div class="approach-foot">
-          <a href="#contact" class="approach-cta" data-i18n="approach-cta">Talk to us about your product</a>
+      </div>
+    </section>
+
+    <section class="products section--alt" id="products">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label section-label--violet" data-i18n="products-label">Portfolio</span>
+          <h2 data-i18n="products-title">Our most relevant products</h2>
+          <p data-i18n="products-sub">Platforms we ship and evolve with domain teams — built for real markets.</p>
         </div>
+        <ul class="product-grid">
+          <li>
+            <article class="product-card" data-product="mining360">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">M360</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Mining</span>
+                <h3 data-i18n="prod-mining360-name">Mining 360</h3>
+                <p class="product-card__desc" data-i18n="prod-mining360-desc">End-to-end mine operations, compliance, and asset visibility in one place.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="archlytics">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">AR</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Analytics</span>
+                <h3 data-i18n="prod-archlytics-name">Archlytics</h3>
+                <p class="product-card__desc" data-i18n="prod-archlytics-desc">Analytics and intelligence for industrial assets, risk, and performance.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="pharmatic">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">Rx</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Pharma</span>
+                <h3 data-i18n="prod-pharmatic-name">Pharmatic</h3>
+                <p class="product-card__desc" data-i18n="prod-pharmatic-desc">Pharma workflows, pricing logic, and regulatory alignment for market access.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="cyberx">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">CX</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Security</span>
+                <h3 data-i18n="prod-cyberx-name">CyberX</h3>
+                <p class="product-card__desc" data-i18n="prod-cyberx-desc">Cyber risk posture, controls, and compliance for regulated enterprises.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="visionmining">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">VM</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Vision</span>
+                <h3 data-i18n="prod-visionmining-name">VisionMining</h3>
+                <p class="product-card__desc" data-i18n="prod-visionmining-desc">Computer vision and sensing for extraction, processing, and safety on site.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="marketmine">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">MM</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Markets</span>
+                <h3 data-i18n="prod-marketmine-name">MarketMine</h3>
+                <p class="product-card__desc" data-i18n="prod-marketmine-desc">Market intelligence and deal flow for mining, metals, and commodities.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="invenor">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">INV</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Ops</span>
+                <h3 data-i18n="prod-invenor-name">Invenor</h3>
+                <p class="product-card__desc" data-i18n="prod-invenor-desc">Inventory, procurement, and supply orchestration for industrial operations.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product-card" data-product="elex">
+              <div class="product-card__visual">
+                <span class="product-card__glyph" aria-hidden="true">EX</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__badge">Energy</span>
+                <h3 data-i18n="prod-elex-name">Elex</h3>
+                <p class="product-card__desc" data-i18n="prod-elex-desc">Electrical grid analytics, asset health, and reliability for utilities and energy.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="container">
+      <div class="container contact-wrap">
         <article class="contact-card">
-          <div class="contact-card__visual">
-            <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
-          </div>
-          <header class="contact-card__head">
-            <h2 data-i18n="contact-title">Want to see our products?</h2>
-            <p data-i18n="contact-sub">Tell us about your market and industry — we’ll get back with relevant examples and next steps.</p>
-          </header>
-          <form class="contact-form" id="contact-form" novalidate>
-            <div class="contact-form__row contact-form__row--2">
-              <div class="contact-field">
-                <label for="contact-name" data-i18n="contact-name">Full name</label>
-                <input type="text" id="contact-name" name="name" required autocomplete="name" />
+          <div class="contact-card__layout">
+            <aside class="contact-card__intro">
+              <span class="section-label section-label--warm" data-i18n="contact-label">Contact</span>
+              <h2 data-i18n="contact-title">Want to see our products?</h2>
+              <p data-i18n="contact-sub">Tell us about your market and industry — we’ll get back with relevant examples and next steps.</p>
+              <p class="contact-card__tag" data-i18n="contact-note">Market-fit discovery call</p>
+              <p class="contact-form__hint" data-i18n="contact-hint">We typically reply almost instantly.</p>
+            </aside>
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="contact-form__grid">
+                <div class="contact-field">
+                  <label for="contact-name" data-i18n="contact-name">Full name</label>
+                  <input type="text" id="contact-name" name="name" required autocomplete="name" />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-email" data-i18n="contact-email">Work email</label>
+                  <input type="email" id="contact-email" name="email" required autocomplete="email" />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-company" data-i18n="contact-company">Company</label>
+                  <input type="text" id="contact-company" name="company" autocomplete="organization" />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-industry" data-i18n="contact-industry">Industry</label>
+                  <select id="contact-industry" name="industry" required>
+                    <option value="" data-i18n="contact-industry-placeholder">Select…</option>
+                    <option value="mining" data-i18n="ind-mining">Mining</option>
+                    <option value="retail" data-i18n="ind-retail">Retail</option>
+                    <option value="finance" data-i18n="ind-finance">Financial Services</option>
+                    <option value="oilgas" data-i18n="ind-oilgas">Oil &amp; Gas</option>
+                    <option value="agro" data-i18n="ind-agro">Agro</option>
+                    <option value="health" data-i18n="ind-health">Health</option>
+                    <option value="energy" data-i18n="ind-energy">Energy &amp; Utilities</option>
+                    <option value="logistics" data-i18n="ind-logistics">Logistics</option>
+                    <option value="other" data-i18n="contact-industry-other">Other</option>
+                  </select>
+                </div>
+                <div class="contact-field contact-field--wide">
+                  <label for="contact-message" data-i18n="contact-message">What are you looking to build?</label>
+                  <textarea id="contact-message" name="message" rows="2" required></textarea>
+                </div>
               </div>
-              <div class="contact-field">
-                <label for="contact-email" data-i18n="contact-email">Work email</label>
-                <input type="email" id="contact-email" name="email" required autocomplete="email" />
-              </div>
-            </div>
-            <div class="contact-form__row contact-form__row--2">
-              <div class="contact-field">
-                <label for="contact-company" data-i18n="contact-company">Company</label>
-                <input type="text" id="contact-company" name="company" autocomplete="organization" />
-              </div>
-              <div class="contact-field">
-                <label for="contact-industry" data-i18n="contact-industry">Industry</label>
-                <select id="contact-industry" name="industry" required>
-                  <option value="" data-i18n="contact-industry-placeholder">Select…</option>
-                  <option value="mining" data-i18n="ind-mining">Mining</option>
-                  <option value="retail" data-i18n="ind-retail">Retail</option>
-                  <option value="finance" data-i18n="ind-finance">Financial Services</option>
-                  <option value="oilgas" data-i18n="ind-oilgas">Oil &amp; Gas</option>
-                  <option value="agro" data-i18n="ind-agro">Agro</option>
-                  <option value="health" data-i18n="ind-health">Health</option>
-                  <option value="energy" data-i18n="ind-energy">Energy &amp; Utilities</option>
-                  <option value="logistics" data-i18n="ind-logistics">Logistics</option>
-                  <option value="other" data-i18n="contact-industry-other">Other</option>
-                </select>
-              </div>
-            </div>
-            <div class="contact-field">
-              <label for="contact-message" data-i18n="contact-message">What are you looking to build?</label>
-              <textarea id="contact-message" name="message" rows="4" required></textarea>
-            </div>
-            <p class="contact-form__hint" data-i18n="contact-hint">We typically reply within 1–2 business days.</p>
-            <div class="contact-form__action">
-              <p class="contact-form__note" data-i18n="contact-note">Market-fit discovery call</p>
               <button type="submit" class="contact-submit">
                 <svg class="contact-submit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span data-i18n="contact-submit">Contact us</span>
               </button>
-            </div>
-            <p class="contact-form__status hidden" id="contact-status" role="status"></p>
-          </form>
+              <p class="contact-form__status hidden" id="contact-status" role="status"></p>
+            </form>
+          </div>
         </article>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -317,6 +395,12 @@
       </p>
     </div>
   </footer>
+
+  <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top" data-i18n-aria="back-to-top" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 
   <script type="importmap">
     {

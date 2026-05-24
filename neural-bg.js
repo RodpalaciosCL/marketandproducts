@@ -10,18 +10,21 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 
 const BRAND = {
-  navy: 0x0b1c2a,
-  sageDeep: 0x4a6b68,
-  sageDim: 0x6d8f8c,
-  sage: 0x8da9a6,
-  sageLight: 0xa8c4c1
+  navy: 0x030810,
+  teal: 0x5ec4bc,
+  sageDeep: 0x3d9a92,
+  sageDim: 0x5a9a94,
+  sage: 0x7eb8b3,
+  sageLight: 0xa8ddd8,
+  violet: 0x8b9cf4
 };
 
 const colorPalette = [
   new THREE.Color(BRAND.navy),
+  new THREE.Color(BRAND.teal),
   new THREE.Color(BRAND.sageDeep),
-  new THREE.Color(BRAND.sageDim),
   new THREE.Color(BRAND.sage),
+  new THREE.Color(BRAND.violet),
   new THREE.Color(BRAND.sageLight)
 ];
 

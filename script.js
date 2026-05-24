@@ -5,6 +5,7 @@
       'brand-tagline': 'Market-fit products',
       'nav-industries': 'Industries',
       'nav-approach': 'Approach',
+      'nav-products': 'Products',
       'nav-contact': 'Contact',
       'hero-eyebrow': 'We build products aligned with real markets',
       'hero-line1': 'Products that',
@@ -14,11 +15,15 @@
         'We dedicate ourselves to building products tuned to each sector — regulations, workflows, and economics included — not one-size-fits-all templates.',
       'hero-cta': 'Explore industries',
       'hero-cta2': 'Start a conversation',
+      'hero-metrics-label': 'Focus',
+      'hero-highlight': 'Products',
       'stat-sectors': 'Core sectors',
       'stat-focus': 'Enterprise focus',
       'stat-region': 'Delivery',
       'industries-title': 'Industries we serve',
+      'industries-label': 'Industries',
       'industries-sub': 'Deep domain context — from pit to patient, shelf to wellhead.',
+      'ind-footnote': 'Manufacturing, public sector, telecom, construction tech — and more.',
       'ind-mining': 'Mining',
       'ind-mining-desc': 'Operations, compliance & asset intelligence underground and open-pit.',
       'ind-retail': 'Retail',
@@ -39,9 +44,9 @@
       'ind-more-desc':
         'Manufacturing, public sector, telecom, construction tech — if the market has rules, we map the product to them.',
       'approach-title': 'How we work',
+      'approach-label': 'Process',
       'approach-sub':
         'We start with market fit — who pays, what they decide, and what cannot move — then ship lean products your teams actually adopt.',
-      'approach-cta': 'Talk to us about your product',
       'step1-title': 'Discover',
       'step1-detail':
         'We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.',
@@ -60,7 +65,28 @@
       'step3-t1': 'Ship',
       'step3-t2': 'Metrics',
       'step3-t3': 'Iterate',
+      'products-title': 'Our most relevant products',
+      'products-label': 'Portfolio',
+      'products-sub': 'Platforms we ship and evolve with domain teams — built for real markets.',
+      'prod-mining360-name': 'Mining 360',
+      'prod-mining360-desc': 'End-to-end mine operations, compliance, and asset visibility in one place.',
+      'prod-archlytics-name': 'Archlytics',
+      'prod-archlytics-desc': 'Analytics and intelligence for industrial assets, risk, and performance.',
+      'prod-pharmatic-name': 'Pharmatic',
+      'prod-pharmatic-desc': 'Pharma workflows, pricing logic, and regulatory alignment for market access.',
+      'prod-cyberx-name': 'CyberX',
+      'prod-cyberx-desc': 'Cyber risk posture, controls, and compliance for regulated enterprises.',
+      'prod-visionmining-name': 'VisionMining',
+      'prod-visionmining-desc': 'Computer vision and sensing for extraction, processing, and safety on site.',
+      'prod-marketmine-name': 'MarketMine',
+      'prod-marketmine-desc': 'Market intelligence and deal flow for mining, metals, and commodities.',
+      'prod-invenor-name': 'Invenor',
+      'prod-invenor-desc': 'Inventory, procurement, and supply orchestration for industrial operations.',
+      'prod-elex-name': 'Elex',
+      'prod-elex-desc': 'Electrical grid analytics, asset health, and reliability for utilities and energy.',
+      'product-flip-hint': 'Hover for details',
       'contact-title': 'Want to see our products?',
+      'contact-label': 'Contact',
       'contact-sub':
         'Tell us about your market and industry — we’ll get back with relevant examples and next steps.',
       'contact-name': 'Full name',
@@ -70,18 +96,20 @@
       'contact-industry-placeholder': 'Select…',
       'contact-industry-other': 'Other',
       'contact-message': 'What are you looking to build?',
-      'contact-hint': 'We typically reply within 1–2 business days.',
+      'contact-hint': 'We typically reply almost instantly.',
       'contact-note': 'Market-fit discovery call',
       'contact-submit': 'Contact us',
       'contact-success': 'Thanks — your email app should open with the message ready to send.',
       'contact-error': 'Please fill in all required fields with a valid email.',
-      'footer-by': 'by'
+      'footer-by': 'by',
+      'back-to-top': 'Back to top'
     },
     es: {
       'brand-name': 'Market and Products',
       'brand-tagline': 'Productos market-fit',
       'nav-industries': 'Industrias',
       'nav-approach': 'Enfoque',
+      'nav-products': 'Productos',
       'nav-contact': 'Contacto',
       'hero-eyebrow': 'Construimos productos alineados al mercado real',
       'hero-line1': 'Productos que',
@@ -91,11 +119,15 @@
         'Nos dedicamos a construir productos adaptados a cada sector — normativa, flujos y economía incluidos — no plantillas genéricas.',
       'hero-cta': 'Ver industrias',
       'hero-cta2': 'Conversemos',
+      'hero-metrics-label': 'Enfoque',
+      'hero-highlight': 'Productos',
       'stat-sectors': 'Sectores clave',
-      'stat-focus': 'Enfoque B2B',
+      'stat-focus': 'Enfoque B2A',
       'stat-region': 'Alcance',
       'industries-title': 'Industrias que atendemos',
+      'industries-label': 'Industrias',
       'industries-sub': 'Contexto de dominio — de mina a paciente, de tienda a pozo.',
+      'ind-footnote': 'Manufactura, sector público, telecom, construction tech — y más.',
       'ind-mining': 'Industria minera',
       'ind-mining-desc': 'Operaciones, cumplimiento e inteligencia de activos en rajo y subterránea.',
       'ind-retail': 'Retail',
@@ -116,9 +148,9 @@
       'ind-more-desc':
         'Manufactura, sector público, telecom, construcción — si el mercado tiene reglas, mapeamos el producto a ellas.',
       'approach-title': 'Cómo trabajamos',
+      'approach-label': 'Proceso',
       'approach-sub':
         'Partimos del market fit — quién paga, qué decide y qué no se mueve — y entregamos productos lean que tu equipo adopta.',
-      'approach-cta': 'Conversemos sobre tu producto',
       'step1-title': 'Descubrir',
       'step1-detail':
         'Mapeamos actores, disparadores de compra y límites de cumplimiento antes de escribir una especificación.',
@@ -137,7 +169,28 @@
       'step3-t1': 'Entrega',
       'step3-t2': 'Métricas',
       'step3-t3': 'Iterar',
+      'products-title': 'Nuestros productos más relevantes',
+      'products-label': 'Portafolio',
+      'products-sub': 'Plataformas que entregamos y evolucionamos con equipos de dominio — hechas para mercados reales.',
+      'prod-mining360-name': 'Mining 360',
+      'prod-mining360-desc': 'Operaciones mineras, cumplimiento y visibilidad de activos de punta a punta.',
+      'prod-archlytics-name': 'Archlytics',
+      'prod-archlytics-desc': 'Analítica e inteligencia para activos industriales, riesgo y desempeño.',
+      'prod-pharmatic-name': 'Pharmatic',
+      'prod-pharmatic-desc': 'Flujos farmacéuticos, precios y alineación regulatoria para acceso al mercado.',
+      'prod-cyberx-name': 'CyberX',
+      'prod-cyberx-desc': 'Postura de ciberriesgo, controles y cumplimiento para empresas reguladas.',
+      'prod-visionmining-name': 'VisionMining',
+      'prod-visionmining-desc': 'Visión computacional y sensores para extracción, procesamiento y seguridad en terreno.',
+      'prod-marketmine-name': 'MarketMine',
+      'prod-marketmine-desc': 'Inteligencia de mercado y deal flow para minería, metales y commodities.',
+      'prod-invenor-name': 'Invenor',
+      'prod-invenor-desc': 'Inventario, compras y orquestación de abastecimiento para operaciones industriales.',
+      'prod-elex-name': 'Elex',
+      'prod-elex-desc': 'Analítica de red eléctrica, salud de activos y confiabilidad para utilities y energía.',
+      'product-flip-hint': 'Pasa el cursor para ver detalle',
       'contact-title': '¿Quieres ver nuestros productos?',
+      'contact-label': 'Contacto',
       'contact-sub':
         'Cuéntanos tu mercado e industria — te respondemos con ejemplos relevantes y próximos pasos.',
       'contact-name': 'Nombre completo',
@@ -147,12 +200,13 @@
       'contact-industry-placeholder': 'Seleccionar…',
       'contact-industry-other': 'Otra',
       'contact-message': '¿Qué producto o solución buscas construir?',
-      'contact-hint': 'Solemos responder en 1–2 días hábiles.',
+      'contact-hint': 'Solemos responder casi al instante.',
       'contact-note': 'Llamada de discovery market-fit',
       'contact-submit': 'Contactar',
       'contact-success': 'Gracias — se abrirá tu correo con el mensaje listo para enviar.',
       'contact-error': 'Completa los campos obligatorios con un email válido.',
-      'footer-by': 'por'
+      'footer-by': 'por',
+      'back-to-top': 'Volver arriba'
     }
   };
 
@@ -166,6 +220,10 @@
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
       if (table[key]) el.textContent = table[key];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (table[key]) el.setAttribute('aria-label', table[key]);
     });
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
@@ -253,4 +311,27 @@
       }
     });
   }
+
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      const show = window.scrollY > 200;
+      backToTop.classList.toggle('is-visible', show);
+      backToTop.setAttribute('aria-hidden', show ? 'false' : 'true');
+      backToTop.tabIndex = show ? 0 : -1;
+    };
+
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      const root = document.documentElement;
+      const prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = prev;
+    });
+  }
+
 })();
