@@ -435,14 +435,14 @@ body {
 .sector-card__visual {
   position: relative; overflow: hidden;
   height: 4.75rem;
-  background: var(--card-visual);
+  background: linear-gradient(135deg, #152420 0%, #243830 55%, #1a2e28 100%);
   border-radius: var(--radius);
 }
 
 .sector-card__icon {
   position: absolute; top: 50%; left: 50%;
   width: 2rem; height: 2rem; transform: translate(-50%, -50%);
-  fill: var(--teal-light);
+  fill: #ffffff;
   transition: transform 0.25s;
 }
 
@@ -453,51 +453,17 @@ body {
   color: var(--card-light); text-align: center; line-height: 1.25;
 }
 
-/* Sector accent colors */
-.industry-item[data-sector="mining"] .sector-card__visual {
-  background: linear-gradient(135deg, #1a2420, #2a3530);
-}
-.industry-item[data-sector="mining"] .sector-card__icon { fill: var(--gold); }
-
-.industry-item[data-sector="retail"] .sector-card__visual {
-  background: linear-gradient(135deg, #2a1f1a, #3d2a22);
-}
-.industry-item[data-sector="retail"] .sector-card__icon { fill: var(--coral-light); }
-
-.industry-item[data-sector="finance"] .sector-card__visual {
-  background: linear-gradient(135deg, #121e2e, #1a3050);
-}
-.industry-item[data-sector="finance"] .sector-card__icon { fill: #7eb8ff; }
-
-.industry-item[data-sector="oilgas"] .sector-card__visual {
-  background: linear-gradient(135deg, #2a1e12, #3d2a18);
-}
-.industry-item[data-sector="oilgas"] .sector-card__icon { fill: #f0a060; }
-
-.industry-item[data-sector="agro"] .sector-card__visual {
-  background: linear-gradient(135deg, #142018, #1e3028);
-}
-.industry-item[data-sector="agro"] .sector-card__icon { fill: #6ee7a0; }
-
-.industry-item[data-sector="health"] .sector-card__visual {
-  background: linear-gradient(135deg, #1a1828, #282040);
-}
-.industry-item[data-sector="health"] .sector-card__icon { fill: #a8b4ff; }
-
-.industry-item[data-sector="energy"] .sector-card__visual {
-  background: linear-gradient(135deg, #2a2410, #3d3518);
-}
-.industry-item[data-sector="energy"] .sector-card__icon { fill: #fcd34d; }
-
-.industry-item[data-sector="logistics"] .sector-card__visual {
-  background: linear-gradient(135deg, #1a1828, #252040);
-}
-.industry-item[data-sector="logistics"] .sector-card__icon { fill: var(--violet-light); }
-
 .industries-footnote {
   margin-top: 2rem; text-align: center;
   font-size: 0.8125rem; color: var(--text-muted); line-height: 1.65;
-  max-width: 32em; margin-inline: auto;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .industries-footnote {
+    white-space: nowrap;
+    max-width: none;
+  }
 }
 
 /* Process */
@@ -623,6 +589,7 @@ a.product-card--link:focus-visible {
   display: flex; align-items: center; justify-content: center;
   height: 5.5rem;
   overflow: hidden;
+  background: radial-gradient(ellipse 90% 120% at 50% 50%, #3d7a8a 0%, #256060 42%, #0f2830 100%);
 }
 
 .product-card__visual::after {
@@ -653,11 +620,13 @@ a.product-card--link:focus-visible {
 
 .product-card__badge {
   align-self: flex-start;
-  font-size: 0.625rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 0.28rem 0.55rem;
+  font-size: 0.625rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 0.35rem 0.5rem;
   border-radius: 6px;
-  color: var(--bg);
+  color: var(--coral-light);
+  background: rgba(232, 149, 106, 0.1);
+  border: 1px solid rgba(232, 149, 106, 0.22);
 }
 
 .product-card__body h3 {
@@ -674,63 +643,6 @@ a.product-card--link:focus-visible {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-/* Per-product accents */
-.product-card[data-product="mining360"] .product-card__visual {
-  background: linear-gradient(135deg, #2a2418 0%, #4a6b48 55%, #1a2830 100%);
-}
-.product-card[data-product="mining360"] .product-card__badge {
-  background: linear-gradient(135deg, var(--gold), #b89a4a);
-}
-
-.product-card[data-product="archlytics"] .product-card__visual {
-  background: linear-gradient(135deg, #0f2830 0%, #3d7a8a 50%, #1a2840 100%);
-}
-.product-card[data-product="archlytics"] .product-card__badge {
-  background: linear-gradient(135deg, var(--teal), var(--violet));
-}
-
-.product-card[data-product="pharmatic"] .product-card__visual {
-  background: linear-gradient(135deg, #2a1820 0%, #8a4a6a 45%, #1a2030 100%);
-}
-.product-card[data-product="pharmatic"] .product-card__badge {
-  background: linear-gradient(135deg, #e8a0c8, var(--coral));
-}
-
-.product-card[data-product="cyberx"] .product-card__visual {
-  background: linear-gradient(135deg, #101828 0%, #3a5a9a 50%, #0f2030 100%);
-}
-.product-card[data-product="cyberx"] .product-card__badge {
-  background: linear-gradient(135deg, #7eb8ff, var(--violet));
-}
-
-.product-card[data-product="visionmining"] .product-card__visual {
-  background: linear-gradient(135deg, #142018 0%, #3a8a68 50%, #102028 100%);
-}
-.product-card[data-product="visionmining"] .product-card__badge {
-  background: linear-gradient(135deg, #6ee7a0, var(--teal-dim));
-}
-
-.product-card[data-product="marketmine"] .product-card__visual {
-  background: linear-gradient(135deg, #2a2010 0%, #9a7a40 50%, #1a2830 100%);
-}
-.product-card[data-product="marketmine"] .product-card__badge {
-  background: linear-gradient(135deg, var(--gold), var(--coral));
-}
-
-.product-card[data-product="invenor"] .product-card__visual {
-  background: linear-gradient(135deg, #281a14 0%, #9a6040 48%, #142028 100%);
-}
-.product-card[data-product="invenor"] .product-card__badge {
-  background: linear-gradient(135deg, var(--coral-light), var(--coral));
-}
-
-.product-card[data-product="elex"] .product-card__visual {
-  background: linear-gradient(135deg, #2a2410 0%, #c9a030 45%, #142830 100%);
-}
-.product-card[data-product="elex"] .product-card__badge {
-  background: linear-gradient(135deg, #fcd34d, #e8956a);
 }
 
 /* Contact — compact split layout */
