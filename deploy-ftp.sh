@@ -21,7 +21,7 @@ for f in index.html styles.css script.js neural-bg.js logo.png; do
     --ftp-create-dirs \
     -T "$f" "ftp://${HOST}/home/admin_archlytic/public_html/${f}" \
     --user "${USER}" \
-    --ssl-reqd \
+    --ftp-pasv \
     --ftp-method multicwd
   echo "  OK"
 done
