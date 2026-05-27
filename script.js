@@ -240,6 +240,35 @@
 
   applyLang(lang);
 
+  function jumpTo(hash) {
+    const root = document.documentElement;
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+
+    if (!hash || hash === '#' || hash === '#home') {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        const headerH = document.querySelector('.header')?.offsetHeight || 70;
+        const top = el.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo(0, Math.max(0, top));
+      }
+    }
+
+    root.style.scrollBehavior = prev;
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      jumpTo(href);
+    });
+  });
+
   const nav = document.getElementById('main-nav');
   const navToggle = document.getElementById('nav-toggle');
   const closeNav = () => {
@@ -330,16 +359,12 @@
 
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
-      const root = document.documentElement;
-      const prev = root.style.scrollBehavior;
-      root.style.scrollBehavior = 'auto';
-      window.scrollTo(0, 0);
-      root.style.scrollBehavior = prev;
+      jumpTo('#home');
     });
   }
 
   const revealTargets = document.querySelectorAll(
-    '.problem-card, .sector-card, .process-card, .capability-card, .product-card, .contact-card, .section-head'
+    '.sector-card, .process-card, .capability-card, .product-card, .contact-card, .offline-card, .section-head'
   );
 
   if ('IntersectionObserver' in window && revealTargets.length) {

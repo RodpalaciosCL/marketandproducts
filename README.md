@@ -1,25 +1,32 @@
 # Market and Products — landing
 
-Sitio corporativo estático de [marketandproducts.com](https://marketandproducts.com/).
+Sitio estático de [marketandproducts.com](https://marketandproducts.com/).
 
-## Desarrollo local
+## Local
 
 ```bash
-python3 -m http.server 8765
+python3 -m http.server 5500
 ```
 
-Abre http://127.0.0.1:8765/
+Abre http://localhost:5500/
 
-## Deploy (VPS Hestia)
+## Deploy
 
 ```bash
 ./deploy-ftp.sh
 ```
 
-Sube a `public_html/` del dominio (cuenta FTP `admin_archlytic`). Ver `DEPLOY.md`.
+Sube a `public_html/` del dominio (FTP `admin_archlytic` en `vps.marketandproducts.com`).
 
-Referencia de diseño (Uiverse card): `DESIGN.html` (no se despliega).
+## Archivos del sitio
 
-## Repo relacionado
+- `index.html`
+- `styles.css`
+- `script.js`
+- `logo.png`
 
-- **Archlytic** (producto): https://github.com/RodpalaciosCL/archlytic — se sirve en `/Archlytic/` del mismo dominio.
+Referencia de diseño (no se despliega): `DESIGN.html`.
+
+## Archlytic
+
+Motor y landing en repo aparte: https://github.com/RodpalaciosCL/archlytic — producción en `/Archlytic/`.

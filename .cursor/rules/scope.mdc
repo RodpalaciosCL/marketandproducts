@@ -7,7 +7,7 @@ alwaysApply: true
 
 Este repositorio es **solo** la landing de https://marketandproducts.com/:
 
-- `index.html`, `styles.css`, `script.js`, `neural-bg.js`, `logo.png`
+- `index.html`, `styles.css`, `script.js`, `logo.png`
 - Deploy: `deploy-ftp.sh` → raíz de `public_html/`
 
 **No** añadas el motor Archlytic ni código de `app/`. Archlytic es otro repo:
