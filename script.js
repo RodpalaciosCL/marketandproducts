@@ -338,4 +338,35 @@
     });
   }
 
+  const revealTargets = document.querySelectorAll(
+    '.problem-card, .sector-card, .process-card, .capability-card, .product-card, .contact-card, .section-head'
+  );
+
+  if ('IntersectionObserver' in window && revealTargets.length) {
+    revealTargets.forEach((el) => el.classList.add('reveal'));
+    const io = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16, rootMargin: '0px 0px -8% 0px' }
+    );
+    revealTargets.forEach((el) => io.observe(el));
+  }
+
+  const systemNodes = Array.from(document.querySelectorAll('.sys-box, .sys-core'));
+  if (systemNodes.length) {
+    let hot = 0;
+    systemNodes[hot].classList.add('is-hot');
+    window.setInterval(() => {
+      systemNodes[hot].classList.remove('is-hot');
+      hot = (hot + 1) % systemNodes.length;
+      systemNodes[hot].classList.add('is-hot');
+    }, 900);
+  }
+
 })();

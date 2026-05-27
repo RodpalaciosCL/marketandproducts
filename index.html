@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=51" />
+  <link rel="stylesheet" href="styles-rig.css?v=4" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
@@ -50,37 +50,57 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="section-label fade-up" data-i18n="hero-eyebrow">We build products aligned with real markets</span>
-          <h1 class="hero-title fade-up delay-1">
-            <span class="hero-title-line" data-i18n="hero-line1">Products that</span>
-            <em class="hero-title-accent" data-i18n="hero-line2">fit the market</em>
-            <span class="hero-title-line" data-i18n="hero-line3">and your industry.</span>
-          </h1>
-          <p class="hero-lead fade-up delay-2" data-i18n="hero-lead">
-            We dedicate ourselves to building products tuned to each sector, regulations, workflows, and economics included, not one-size-fits-all templates.
-          </p>
-          <div class="hero-actions fade-up delay-3">
-            <a href="#industries" class="btn btn-primary" data-i18n="hero-cta">Explore industries</a>
-            <a href="#contact" class="btn btn-outline" data-i18n="hero-cta2">Start a conversation</a>
-          </div>
+    <section class="hero hero-rig" id="home">
+      <div class="container hero-rig__inner">
+        <h1 class="hero-rig__title">Products that fit the market.<br>Built for your industry.</h1>
+        <p class="hero-rig__lead">We build products aligned with real markets — tuned to sector workflows, regulations, and economics, not one-size-fits-all templates.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Our products</a>
         </div>
-        <aside class="hero-aside fade-up delay-2" aria-label="Key metrics">
-          <div class="hero-panel">
-            <div class="hero-panel__glow" aria-hidden="true"></div>
-            <div class="hero-panel__logo-wrap">
-              <img src="logo.png" alt="" class="hero-panel__logo" width="80" height="80" />
-            </div>
-            <ul class="hero-panel__stats">
-              <li><strong>8</strong><span data-i18n="stat-sectors">Core sectors</span></li>
-              <li><strong>B2A</strong><span data-i18n="stat-focus">Enterprise focus</span></li>
-              <li><strong>8+</strong><span data-i18n="hero-highlight">Products</span></li>
-              <li><strong>Global</strong><span data-i18n="stat-region">Delivery</span></li>
-            </ul>
+      </div>
+    </section>
+
+    <section class="system-map">
+      <div class="container">
+        <div class="system-map__stage">
+          <div class="sys-box sys-box--top">Generic software</div>
+          <div class="sys-cross">X</div>
+          <div class="sys-row">
+            <div class="sys-box">Industry context<br><small>Workflows · Compliance</small></div>
+            <div class="sys-core">Market and Products<br><small>Market-fit execution</small></div>
+            <div class="sys-box">Adoption<br><small>Operations · Delivery</small></div>
           </div>
-        </aside>
+          <div class="sys-cross">X</div>
+          <div class="sys-box sys-box--bottom">Misalignment</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offline-highlight">
+      <div class="container offline-highlight__grid">
+        <div class="offline-visual" aria-hidden="true"></div>
+        <div class="offline-copy">
+          <span class="section-label">Process</span>
+          <h2>How we work</h2>
+          <p>We start with market fit, who pays, what they decide, and what cannot move, then ship lean products your teams actually adopt.</p>
+        </div>
+      </div>
+      <div class="container offline-cards">
+        <article class="offline-card">
+          <span class="section-label">01</span>
+          <h3>Discover</h3>
+          <p>We map stakeholders, purchase triggers, and compliance boundaries before writing a single spec.</p>
+        </article>
+        <article class="offline-card">
+          <span class="section-label">02</span>
+          <h3>Design fit</h3>
+          <p>Scope, pricing logic, and milestones are anchored to how the market actually buys.</p>
+        </article>
+        <article class="offline-card">
+          <span class="section-label">03</span>
+          <h3>Build & evolve</h3>
+          <p>We release in tight loops with instrumentation, adoption metrics, and domain validation.</p>
+        </article>
       </div>
     </section>
 
@@ -212,6 +232,48 @@
                 <li><span data-i18n="step3-t3">Iterate</span></li>
               </ul>
             </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="capabilities section--alt" id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Capabilities</span>
+          <h2>Your market, fully mapped.</h2>
+          <p>We combine strategy, domain context, and execution so product decisions remain aligned from discovery to rollout.</p>
+        </div>
+        <ol class="capability-grid">
+          <li class="capability-card">
+            <span class="capability-index">[ 01 ]</span>
+            <h3>Understands your market architecture.</h3>
+            <p>We model relationships across actors, workflows, constraints, and economics before implementation.</p>
+          </li>
+          <li class="capability-card">
+            <span class="capability-index">[ 02 ]</span>
+            <h3>Protects regulated workflows.</h3>
+            <p>Design and delivery account for compliance and auditability from day one, not as late patches.</p>
+          </li>
+          <li class="capability-card">
+            <span class="capability-index">[ 03 ]</span>
+            <h3>Strategizes before building.</h3>
+            <p>We run discovery to plan to execution loops so roadmap decisions are grounded in real buying logic.</p>
+          </li>
+          <li class="capability-card">
+            <span class="capability-index">[ 04 ]</span>
+            <h3>Executes complex delivery programs.</h3>
+            <p>From integration to product launch, we coordinate teams, tooling, and milestones around measurable outcomes.</p>
+          </li>
+          <li class="capability-card">
+            <span class="capability-index">[ 05 ]</span>
+            <h3>Runs isolated validation cycles.</h3>
+            <p>We test alternatives safely, compare outcomes, and ship only what improves adoption and performance.</p>
+          </li>
+          <li class="capability-card">
+            <span class="capability-index">[ 06 ]</span>
+            <h3>Delivers with speed and control.</h3>
+            <p>Fast iteration without losing clarity, ownership, or strategic direction at enterprise scale.</p>
           </li>
         </ol>
       </div>
@@ -411,8 +473,8 @@
       }
     }
   </script>
-  <script type="module" src="neural-bg.js?v=43"></script>
-  <script src="script.js?v=49"></script>
+  <script type="module" src="neural-bg.js?v=45"></script>
+  <script src="script.js?v=53"></script>
 </body>
 
 </html>

@@ -10,22 +10,22 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 
 const BRAND = {
-  navy: 0x030810,
-  teal: 0x5ec4bc,
-  sageDeep: 0x3d9a92,
-  sageDim: 0x5a9a94,
-  sage: 0x7eb8b3,
-  sageLight: 0xa8ddd8,
-  violet: 0x8b9cf4
+  navy: 0x02040a,
+  teal: 0x60a5fa,
+  sageDeep: 0x1e293b,
+  sageDim: 0x334155,
+  sage: 0x94a3b8,
+  sageLight: 0xe2e8f0,
+  violet: 0x93c5fd
 };
 
 const colorPalette = [
-  new THREE.Color(BRAND.navy),
-  new THREE.Color(BRAND.teal),
-  new THREE.Color(BRAND.sageDeep),
-  new THREE.Color(BRAND.sage),
-  new THREE.Color(BRAND.violet),
-  new THREE.Color(BRAND.sageLight)
+  new THREE.Color(0x0f172a),
+  new THREE.Color(0x1e293b),
+  new THREE.Color(0x334155),
+  new THREE.Color(0x475569),
+  new THREE.Color(0x64748b),
+  new THREE.Color(0x94a3b8)
 ];
 
 const isMobile = window.matchMedia('(max-width: 767px)').matches;
@@ -44,7 +44,7 @@ function init() {
   const densityFactor = isMobile ? 0.5 : 0.72;
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(BRAND.navy, 0.0016);
+  scene.fog = new THREE.FogExp2(BRAND.navy, 0.00125);
 
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1200);
   camera.position.set(0, 4, 24);
@@ -77,11 +77,11 @@ function init() {
   const starField = new THREE.Points(
     starGeo,
     new THREE.PointsMaterial({
-      color: BRAND.sage,
+      color: BRAND.sageLight,
       size: 0.12,
       sizeAttenuation: true,
       depthWrite: false,
-      opacity: 0.35,
+      opacity: 0.12,
       transparent: true
     })
   );
@@ -94,7 +94,7 @@ function init() {
   controls.minDistance = 8;
   controls.maxDistance = 90;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.12;
+  controls.autoRotateSpeed = 0.08;
   controls.enablePan = false;
   controls.enableZoom = false;
 
@@ -102,9 +102,9 @@ function init() {
   composer.addPass(new RenderPass(scene, camera));
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(window.innerWidth, window.innerHeight),
-    isMobile ? 0.65 : 0.9,
-    0.35,
-    0.72
+    isMobile ? 0.34 : 0.42,
+    0.28,
+    1.05
   );
   composer.addPass(bloomPass);
   composer.addPass(new OutputPass());
@@ -118,7 +118,7 @@ function init() {
     uPulseColors: {
       value: [new THREE.Color(BRAND.sageLight), new THREE.Color(BRAND.sage), new THREE.Color(BRAND.sageDim)]
     },
-    uPulseSpeed: { value: 14 },
+    uPulseSpeed: { value: 10 },
     uBaseNodeSize: { value: 0.45 },
     uActivePalette: { value: 0 }
   };
@@ -188,14 +188,14 @@ function init() {
         vec2 center = 2.0 * gl_PointCoord - 1.0;
         float dist = length(center);
         if (dist > 1.0) discard;
-        float glowStrength = pow(1.0 - smoothstep(0.0, 1.0, dist), 1.35);
+      float glowStrength = pow(1.0 - smoothstep(0.0, 1.0, dist), 1.45);
         vec3 baseColor = vColor * (0.75 + 0.25 * sin(uTime * 0.45 + vDistanceFromRoot * 0.25));
         vec3 finalColor = baseColor;
         if (vPulseIntensity > 0.0) {
           finalColor = mix(baseColor, uPulseColors[0], vPulseIntensity * 0.85);
-          finalColor *= (1.0 + vPulseIntensity * 0.5);
+          finalColor *= (1.0 + vPulseIntensity * 0.35);
         }
-        float alpha = glowStrength * (0.85 - 0.45 * dist);
+        float alpha = glowStrength * (0.62 - 0.34 * dist);
         float distanceFade = smoothstep(85.0, 12.0, length(vPosition - cameraPosition));
         if (vNodeType < 0.5) finalColor *= 1.15;
         gl_FragColor = vec4(finalColor, alpha * distanceFade);
@@ -239,7 +239,7 @@ function init() {
         float flow = sin(vPathPosition * 18.0 - uTime * 2.5) * 0.5 + 0.5;
         vec3 finalColor = baseColor * (0.55 + 0.25 * flow * vConnectionStrength + vConnectionStrength * 0.35);
         if (vPulseIntensity > 0.0) finalColor = mix(finalColor, uPulseColors[0], vPulseIntensity * 0.7);
-        float alpha = 0.65 * vConnectionStrength + 0.15 * flow;
+        float alpha = 0.42 * vConnectionStrength + 0.11 * flow;
         gl_FragColor = vec4(finalColor, alpha);
       }`
   };
@@ -475,7 +475,7 @@ function init() {
       connectionsMesh.rotation.y = Math.sin(t * 0.04) * 0.06;
     }
 
-    if (t - lastAutoPulse > 5.5) {
+    if (t - lastAutoPulse > 11) {
       lastAutoPulse = t;
       const angle = t * 0.35;
       firePulse(new THREE.Vector3(Math.cos(angle) * 6, Math.sin(t * 0.2) * 3, Math.sin(angle) * 6));
