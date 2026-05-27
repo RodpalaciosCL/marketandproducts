@@ -5,10 +5,20 @@ cd "$(dirname "$0")"
 
 HOST="${FTP_HOST:-vps.marketandproducts.com}"
 USER="${FTP_USER:-admin_archlytic}"
+REMOTE_DIR="${FTP_REMOTE_DIR:-/home/admin_archlytic/public_html}"
+
+if [[ -n "${FTP_PASS:-}" ]]; then
+  CURL_USER="${USER}:${FTP_PASS}"
+else
+  CURL_USER="${USER}"
+fi
 
 echo "=== Deploy Market & Products → $HOST ==="
 echo "Usuario: $USER"
-echo "Te pedirá la contraseña FTP (la de Hestia / Additional FTP)."
+if [[ -z "${FTP_PASS:-}" ]]; then
+  echo "Te pedirá la contraseña FTP (la de Hestia / Additional FTP)."
+  echo "Tip: FTP_PASS='…' ./deploy-ftp.sh para no escribirla a mano."
+fi
 echo ""
 
 for f in index.html styles.css script.js logo.png; do
@@ -19,12 +29,13 @@ for f in index.html styles.css script.js logo.png; do
   echo "Subiendo $f ..."
   curl --fail --silent --show-error \
     --ftp-create-dirs \
-    -T "$f" "ftp://${HOST}/home/admin_archlytic/public_html/${f}" \
-    --user "${USER}" \
+    -T "$f" "ftp://${HOST}${REMOTE_DIR}/${f}" \
+    --user "${CURL_USER}" \
     --ftp-pasv \
     --ftp-method multicwd
   echo "  OK"
 done
 
 echo ""
-echo "Listo. Abre https://marketandproducts.com/ y recarga con Cmd+Shift+R"
+echo "Listo. Verifica: curl -sI https://marketandproducts.com/ | grep -i last-modified"
+echo "Abre https://marketandproducts.com/ y recarga con Cmd+Shift+R"

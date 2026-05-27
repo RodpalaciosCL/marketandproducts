@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=55" />
+  <link rel="stylesheet" href="styles.css?v=60" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
@@ -20,17 +20,39 @@
   <div class="bg-grid" aria-hidden="true"></div>
 
   <header class="header">
-    <div class="container header-inner">
+    <div class="header-accent" aria-hidden="true"></div>
+    <div class="container header-bar">
       <a href="#home" class="brand" aria-label="Market and Products home">
-        <img src="logo.png" alt="" class="brand-mark" width="40" height="40" />
+        <img src="logo.png" alt="" class="brand-mark" width="44" height="44" />
         <span class="brand-text">
           <strong data-i18n="brand-name">Market and Products</strong>
           <span data-i18n="brand-tagline">Market-fit products</span>
         </span>
       </a>
-      <div class="header-actions">
+      <nav class="nav" id="main-nav" aria-label="Main">
+        <a href="#industries" class="nav-link">
+          <span class="nav-link__index" aria-hidden="true">01</span>
+          <span class="nav-link__label" data-i18n="nav-industries">Industries</span>
+        </a>
+        <a href="#approach" class="nav-link">
+          <span class="nav-link__index" aria-hidden="true">02</span>
+          <span class="nav-link__label" data-i18n="nav-approach">Approach</span>
+        </a>
+        <a href="#products" class="nav-link">
+          <span class="nav-link__index" aria-hidden="true">03</span>
+          <span class="nav-link__label" data-i18n="nav-products">Products</span>
+        </a>
+        <a href="#contact" class="nav-cta">
+          <span data-i18n="nav-contact">Contact</span>
+          <svg class="nav-cta__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+      <div class="header-util">
         <div class="lang-switch" role="group" aria-label="Language">
           <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-divider" aria-hidden="true"></span>
           <button type="button" class="lang-btn" data-lang="es">ES</button>
         </div>
         <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false"
@@ -38,12 +60,6 @@
           <span></span><span></span><span></span>
         </button>
       </div>
-      <nav class="nav" id="main-nav" aria-label="Main">
-        <a href="#industries" data-i18n="nav-industries">Industries</a>
-        <a href="#approach" data-i18n="nav-approach">Approach</a>
-        <a href="#products" data-i18n="nav-products">Products</a>
-        <a href="#contact" class="nav-cta" data-i18n="nav-contact">Contact</a>
-      </nav>
     </div>
   </header>
 
