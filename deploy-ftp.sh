@@ -21,7 +21,7 @@ if [[ -z "${FTP_PASS:-}" ]]; then
 fi
 echo ""
 
-for f in index.html styles.css script.js logo.png; do
+for f in index.html styles.css script.js logo.png contact.php; do
   if [[ ! -f "$f" ]]; then
     echo "Falta archivo: $f"
     exit 1
