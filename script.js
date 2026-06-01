@@ -12,7 +12,7 @@
       'hero-line2': 'fit the market',
       'hero-line3': 'and your industry.',
       'hero-lead':
-        'We dedicate ourselves to building products tuned to each sector, regulations, workflows, and economics included, not one-size-fits-all templates.',
+        'We build products aligned with real markets, tuned to sector workflows, regulations, and economics, not one-size-fits-all templates.',
       'hero-cta': 'Explore industries',
       'hero-cta2': 'Start a conversation',
       'hero-metrics-label': 'Focus',
@@ -118,7 +118,7 @@
       'hero-line2': 'encajan con el mercado',
       'hero-line3': 'y con tu industria.',
       'hero-lead':
-        'Nos dedicamos a construir productos adaptados a cada sector — normativa, flujos y economía incluidos — no plantillas genéricas.',
+        'Construimos productos alineados al mercado real, adaptados a flujos del sector, normativa y economía, no plantillas genéricas.',
       'hero-cta': 'Ver industrias',
       'hero-cta2': 'Conversemos',
       'hero-metrics-label': 'Enfoque',

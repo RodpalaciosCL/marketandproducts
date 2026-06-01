@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=60" />
+  <link rel="stylesheet" href="styles.css?v=66" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
@@ -23,7 +23,7 @@
     <div class="header-accent" aria-hidden="true"></div>
     <div class="container header-bar">
       <a href="#home" class="brand" aria-label="Market and Products home">
-        <img src="logo.png" alt="" class="brand-mark" width="44" height="44" />
+        <img src="logo.png" alt="Market and Products" class="brand-mark" width="46" height="64" />
         <span class="brand-text">
           <strong data-i18n="brand-name">Market and Products</strong>
           <span data-i18n="brand-tagline">Market-fit products</span>
@@ -65,9 +65,15 @@
 
   <main>
     <section class="hero hero-rig" id="home">
+      <div class="hero-rig__bg" aria-hidden="true">
+        <span class="hero-rig__glow"></span>
+        <span class="hero-rig__bands"></span>
+        <span class="hero-rig__sheen"></span>
+        <span class="hero-rig__scan"></span>
+      </div>
       <div class="container hero-rig__inner">
         <h1 class="hero-rig__title">Products that fit the market.<br>Built for your industry.</h1>
-        <p class="hero-rig__lead">We build products aligned with real markets — tuned to sector workflows, regulations, and economics, not one-size-fits-all templates.</p>
+        <p class="hero-rig__lead" data-i18n="hero-lead">We build products aligned with real markets, tuned to sector workflows, regulations, and economics, not one-size-fits-all templates.</p>
         <div class="hero-actions">
           <a href="#products" class="btn btn-primary">Our products</a>
         </div>
@@ -92,7 +98,16 @@
 
     <section class="offline-highlight">
       <div class="container offline-highlight__grid">
-        <div class="offline-visual" aria-hidden="true"></div>
+        <div class="offline-visual" aria-hidden="true">
+          <span class="offline-visual__mesh"></span>
+          <span class="offline-visual__core"></span>
+          <span class="offline-visual__ripple"></span>
+          <span class="offline-visual__ripple offline-visual__ripple--2"></span>
+          <span class="offline-visual__ripple offline-visual__ripple--3"></span>
+          <span class="offline-visual__orbit"></span>
+          <span class="offline-visual__sheen"></span>
+          <span class="offline-visual__scan"></span>
+        </div>
         <div class="offline-copy">
           <span class="section-label">Process</span>
           <h2>How we work</h2>
@@ -293,10 +308,11 @@
       </div>
     </section>
 
-    <section class="products section--alt" id="products">
+    <section class="products" id="products">
+      <div class="products__glow" aria-hidden="true"></div>
       <div class="container">
-        <div class="section-head">
-          <span class="section-label section-label--violet" data-i18n="products-label">Portfolio</span>
+        <div class="section-head products-head section-head--center">
+          <span class="section-label section-label--warm" data-i18n="products-label">Portfolio</span>
           <h2 data-i18n="products-title">Our most relevant products</h2>
           <p data-i18n="products-sub">Platforms we ship and evolve with domain teams, built for real markets!</p>
         </div>
@@ -304,10 +320,14 @@
           <li>
             <a class="product-card product-card--link" href="https://marketandproducts.com/Archlytic/" data-product="archlytics" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">AR</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Analytics</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Analytics</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-archlytics-name">Archlytics</h3>
                 <p class="product-card__desc" data-i18n="prod-archlytics-desc">Analytics and intelligence for industrial assets, risk, and performance.</p>
               </div>
@@ -316,10 +336,14 @@
           <li>
             <a class="product-card product-card--link" href="https://invenor.group/" data-product="invenor" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">INV</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Ops</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Ops</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-invenor-name">Invenor</h3>
                 <p class="product-card__desc" data-i18n="prod-invenor-desc">Inventory, procurement, and supply orchestration for industrial operations.</p>
               </div>
@@ -328,10 +352,14 @@
           <li>
             <a class="product-card product-card--link" href="https://www.airontechs.com/" data-product="mining360" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">M360</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Mining</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Mining</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-mining360-name">Mining 360</h3>
                 <p class="product-card__desc" data-i18n="prod-mining360-desc">End-to-end mine operations, compliance, and asset visibility in one place.</p>
               </div>
@@ -340,10 +368,14 @@
           <li>
             <a class="product-card product-card--link" href="https://www.airontechs.com/" data-product="pharmatic" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">Rx</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Pharma</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Pharma</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-pharmatic-name">Pharmatic</h3>
                 <p class="product-card__desc" data-i18n="prod-pharmatic-desc">Pharma workflows, pricing logic, and regulatory alignment for market access.</p>
               </div>
@@ -352,10 +384,14 @@
           <li>
             <a class="product-card product-card--link" href="https://www.airontechs.com/" data-product="cyberx" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">CX</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Security</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Security</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-cyberx-name">CyberX</h3>
                 <p class="product-card__desc" data-i18n="prod-cyberx-desc">Cyber risk posture, controls, and compliance for regulated enterprises.</p>
               </div>
@@ -364,10 +400,14 @@
           <li>
             <a class="product-card product-card--link" href="https://www.airontechs.com/" data-product="visionmining" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">VM</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Vision</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Vision</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-visionmining-name">VisionMining</h3>
                 <p class="product-card__desc" data-i18n="prod-visionmining-desc">Computer vision and sensing for extraction, processing, and safety on site.</p>
               </div>
@@ -376,10 +416,14 @@
           <li>
             <a class="product-card product-card--link" href="https://www.airontechs.com/" data-product="marketmine" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">MM</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Markets</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Markets</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-marketmine-name">MarketMine</h3>
                 <p class="product-card__desc" data-i18n="prod-marketmine-desc">Market intelligence and deal flow for mining, metals, and commodities.</p>
               </div>
@@ -388,10 +432,14 @@
           <li>
             <a class="product-card product-card--link" href="https://www.airontechs.com/" data-product="elex" target="_blank" rel="noopener noreferrer">
               <div class="product-card__visual">
+                <span class="product-card__mesh" aria-hidden="true"></span>
                 <span class="product-card__glyph" aria-hidden="true">EX</span>
               </div>
               <div class="product-card__body">
-                <span class="product-card__badge">Energy</span>
+                <div class="product-card__meta">
+                  <span class="product-card__badge">Energy</span>
+                  <span class="product-card__go" aria-hidden="true">↗</span>
+                </div>
                 <h3 data-i18n="prod-elex-name">Elex</h3>
                 <p class="product-card__desc" data-i18n="prod-elex-desc">Electrical grid analytics, asset health, and reliability for utilities and energy.</p>
               </div>
