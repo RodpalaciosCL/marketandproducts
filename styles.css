@@ -100,6 +100,24 @@ section { padding: 5.6rem 0; }
 
 .section-head--center { text-align: center; margin-inline: auto; }
 
+.capabilities-head {
+  max-width: none;
+  width: 100%;
+}
+
+.capabilities-head p {
+  max-width: none;
+  margin-inline: auto;
+  font-size: clamp(0.8rem, 1.05vw, 0.92rem);
+  line-height: 1.45;
+}
+
+@media (min-width: 901px) {
+  .capabilities-head p {
+    white-space: nowrap;
+  }
+}
+
 .market-acronym { color: var(--hero-orange); font-weight: 700; }
 
 /* Header */
