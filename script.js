@@ -51,7 +51,7 @@
       'prod-badge-mining': 'Mining',
       'prod-badge-pharma': 'Pharma',
       'prod-badge-security': 'Security',
-      'prod-badge-vision': 'Vision',
+      'prod-badge-education': 'Education',
       'prod-badge-markets': 'Markets',
       'prod-badge-energy': 'Energy',
       'hero-cta2': 'Start a conversation',
@@ -118,8 +118,8 @@
       'prod-pharmatic-desc': 'Pharma workflows, pricing logic, and regulatory alignment for market access.',
       'prod-cyberx-name': 'CyberX',
       'prod-cyberx-desc': 'Cyber risk posture, controls, and compliance for regulated enterprises.',
-      'prod-visionmining-name': 'VisionMining',
-      'prod-visionmining-desc': 'Computer vision and sensing for extraction, processing, and safety on site.',
+      'prod-learningtogether-name': 'Learning Together',
+      'prod-learningtogether-desc': 'Custom educational platform for children',
       'prod-marketmine-name': 'MarketMine',
       'prod-marketmine-desc': 'Market intelligence and deal flow for mining, metals, and commodities.',
       'prod-invenor-name': 'Invenor',
@@ -149,6 +149,7 @@
       'contact-modal-body': 'Thanks! We received your message and will get back to you soon.',
       'contact-modal-close': 'Close',
       'footer-by': 'by',
+      'footer-copy': '© 2024 Market and Products',
       'back-to-top': 'Back to top'
     },
     es: {
@@ -202,7 +203,7 @@
       'prod-badge-mining': 'Minería',
       'prod-badge-pharma': 'Pharma',
       'prod-badge-security': 'Seguridad',
-      'prod-badge-vision': 'Visión',
+      'prod-badge-education': 'Educación',
       'prod-badge-markets': 'Mercados',
       'prod-badge-energy': 'Energía',
       'hero-cta2': 'Conversemos',
@@ -269,8 +270,8 @@
       'prod-pharmatic-desc': 'Flujos farmacéuticos, precios y alineación regulatoria para acceso al mercado.',
       'prod-cyberx-name': 'CyberX',
       'prod-cyberx-desc': 'Postura de ciberriesgo, controles y cumplimiento para empresas reguladas.',
-      'prod-visionmining-name': 'VisionMining',
-      'prod-visionmining-desc': 'Visión computacional y sensores para extracción, procesamiento y seguridad en terreno.',
+      'prod-learningtogether-name': 'Learning Together',
+      'prod-learningtogether-desc': 'Plataforma educativa customizada para niños',
       'prod-marketmine-name': 'MarketMine',
       'prod-marketmine-desc': 'Inteligencia de mercado y deal flow para minería, metales y commodities.',
       'prod-invenor-name': 'Invenor',
@@ -300,6 +301,7 @@
       'contact-modal-body': '¡Gracias! Recibimos tu mensaje y te responderemos pronto.',
       'contact-modal-close': 'Cerrar',
       'footer-by': 'por',
+      'footer-copy': '© 2024 Market and Products',
       'back-to-top': 'Volver arriba'
     }
   };
@@ -500,16 +502,31 @@
   }
 
   const backToTop = document.getElementById('back-to-top');
+  const footerEl = document.querySelector('.footer');
+
   if (backToTop) {
-    const toggleBackToTop = () => {
+    const baseBottom = 16;
+
+    const updateBackToTop = () => {
       const show = window.scrollY > 200;
       backToTop.classList.toggle('is-visible', show);
       backToTop.setAttribute('aria-hidden', show ? 'false' : 'true');
       backToTop.tabIndex = show ? 0 : -1;
+
+      if (footerEl) {
+        const footerTop = footerEl.getBoundingClientRect().top;
+        const overlap = window.innerHeight - footerTop;
+        if (overlap > 0) {
+          backToTop.style.bottom = `${overlap + baseBottom + 8}px`;
+        } else {
+          backToTop.style.bottom = `${baseBottom}px`;
+        }
+      }
     };
 
-    toggleBackToTop();
-    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    updateBackToTop();
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    window.addEventListener('resize', updateBackToTop);
 
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
