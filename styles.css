@@ -1016,7 +1016,7 @@ section { padding: 5.6rem 0; }
 .product-card[data-product="cyberx"] { --product-accent: rgba(244, 63, 94, 0.3); }
 .product-card[data-product="learningtogether"] { --product-accent: rgba(139, 92, 246, 0.32); }
 .product-card[data-product="marketmine"] { --product-accent: rgba(240, 76, 62, 0.38); }
-.product-card[data-product="elex"] { --product-accent: rgba(250, 204, 21, 0.28); }
+.product-card[data-product="ogp"] { --product-accent: rgba(250, 204, 21, 0.28); }
 
 .product-card:hover[data-product="archlytics"] { box-shadow: 0 22px 50px rgba(59, 130, 246, 0.12); }
 .product-card:hover[data-product="invenor"] { box-shadow: 0 22px 50px rgba(34, 197, 94, 0.12); }
@@ -1025,7 +1025,7 @@ section { padding: 5.6rem 0; }
 .product-card:hover[data-product="cyberx"] { box-shadow: 0 22px 50px rgba(244, 63, 94, 0.12); }
 .product-card:hover[data-product="learningtogether"] { box-shadow: 0 22px 50px rgba(139, 92, 246, 0.12); }
 .product-card:hover[data-product="marketmine"] { box-shadow: 0 22px 50px rgba(240, 76, 62, 0.18); }
-.product-card:hover[data-product="elex"] { box-shadow: 0 22px 50px rgba(250, 204, 21, 0.1); }
+.product-card:hover[data-product="ogp"] { box-shadow: 0 22px 50px rgba(250, 204, 21, 0.1); }
 
 /* Contact */
 .contact {
