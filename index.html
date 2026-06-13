@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=81" />
+  <link rel="stylesheet" href="styles.css?v=82" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
@@ -446,12 +446,27 @@
             </a>
           </li>
         </ul>
-        <p class="products-more">
-          <span class="products-more__line" aria-hidden="true"></span>
-          <span data-i18n="products-more">And more</span>
-          <span class="products-more__line" aria-hidden="true"></span>
-        </p>
-        <p class="products-more__sub" data-i18n="products-more-sub">Many more apps and platforms across industries.</p>
+        <div class="products-more">
+          <article class="products-more__panel">
+            <div class="products-more__visual" aria-hidden="true">
+              <span class="products-more__mesh"></span>
+              <span class="products-more__scan"></span>
+              <span class="products-more__watermark">09+</span>
+              <span class="products-more__glyph">++</span>
+            </div>
+            <div class="products-more__body">
+              <div class="products-more__meta">
+                <span class="product-card__badge" data-i18n="products-more-badge">Portfolio</span>
+                <span class="products-more__pulse" aria-hidden="true"></span>
+              </div>
+              <h3 class="products-more__title">
+                <span data-i18n="products-more">And more</span>
+              </h3>
+              <p class="products-more__sub" data-i18n="products-more-sub">Many more apps and platforms across industries.</p>
+              <p class="products-more__tags" data-i18n="products-more-tags">Mining · Pharma · Retail · AI · Logistics · Health · Energy · +</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
