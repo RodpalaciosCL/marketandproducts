@@ -1,0 +1,15 @@
+.git
+.cursor
+.gitignore
+.assetsignore
+.node_modules
+node_modules
+*.md
+DESIGN.html
+deploy-ftp.sh
+contact.php
+wrangler.toml
+.DS_Store
+.dev.vars
+.wrangler
+testsprite_tests

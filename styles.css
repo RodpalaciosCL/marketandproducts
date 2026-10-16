@@ -849,21 +849,21 @@ section { padding: 5.6rem 0; }
 .products-head { margin-bottom: 2.8rem; }
 
 .products-more {
-  margin-top: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1px;
+  display: contents;
 }
 
 .products-more__panel {
-  display: grid;
-  grid-template-columns: minmax(9.5rem, 14rem) 1fr;
-  min-height: 11.5rem;
+  --product-accent: rgba(240, 76, 62, 0.28);
+  display: flex;
+  flex-direction: column;
+  min-height: 15.5rem;
+  height: 100%;
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 140% at 100% 0%, rgba(240, 76, 62, 0.08), transparent 52%),
+    radial-gradient(120% 90% at 0% 0%, var(--product-accent), transparent 55%),
     linear-gradient(180deg, rgba(10, 11, 15, 0.98), rgba(6, 7, 10, 0.96));
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s;
 }
 
 .products-more__panel::before {
@@ -871,20 +871,48 @@ section { padding: 5.6rem 0; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 40%);
 }
+
+.products-more__panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 50px rgba(240, 76, 62, 0.14);
+}
+
+.products-more__panel:hover::before { opacity: 1; }
 
 .products-more__visual {
   position: relative;
+  flex: 0 0 5.5rem;
   overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.85rem;
+}
+
+.products-more__visual::before {
+  content: "12+";
+  position: absolute;
+  left: 0.85rem;
+  top: 0.55rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(2.4rem, 3.2vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
 }
 
 .products-more__mesh {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(155deg, rgba(240, 76, 62, 0.34) 0%, rgba(99, 102, 241, 0.16) 38%, transparent 68%),
+    linear-gradient(155deg, rgba(240, 76, 62, 0.38) 0%, rgba(99, 102, 241, 0.18) 42%, transparent 72%),
     repeating-linear-gradient(
       -12deg,
       transparent 0,
@@ -892,6 +920,11 @@ section { padding: 5.6rem 0; }
       rgba(255, 255, 255, 0.03) 11px,
       rgba(255, 255, 255, 0.03) 12px
     );
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.products-more__panel:hover .products-more__mesh {
+  transform: scale(1.06);
 }
 
 .products-more__scan {
@@ -911,29 +944,16 @@ section { padding: 5.6rem 0; }
   100% { transform: translateY(60%); }
 }
 
-.products-more__watermark {
-  position: absolute;
-  left: 0.65rem;
-  top: 0.45rem;
-  font-family: "Montserrat", system-ui, sans-serif;
-  font-size: clamp(2.6rem, 4vw, 3.4rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.06);
-  pointer-events: none;
-}
+.products-more__watermark { display: none; }
 
 .products-more__glyph {
-  position: absolute;
-  right: 0.85rem;
-  bottom: 0.85rem;
+  position: relative;
   z-index: 1;
   font-family: "Montserrat", system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: 0.35rem 0.55rem;
+  padding: 0.3rem 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 4px;
   color: #fafafa;
@@ -946,15 +966,16 @@ section { padding: 5.6rem 0; }
   position: relative;
   z-index: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.55rem;
-  padding: 1.35rem 1.5rem 1.45rem;
+  gap: 0.45rem;
+  padding: 1rem 1.05rem 1.15rem;
 }
 
 .products-more__meta {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.75rem;
 }
 
@@ -975,27 +996,32 @@ section { padding: 5.6rem 0; }
 
 .products-more__title {
   font-family: "Montserrat", system-ui, sans-serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   color: #fafafa;
 }
 
 .products-more__sub {
-  max-width: 34rem;
-  font-size: 0.92rem;
-  line-height: 1.55;
+  font-size: 0.78rem;
+  line-height: 1.45;
   color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .products-more__tags {
-  margin-top: 0.15rem;
-  font-size: 0.68rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: rgba(228, 228, 231, 0.72);
+  color: rgba(228, 228, 231, 0.62);
+  line-height: 1.4;
 }
 
 .product-grid {
@@ -1159,7 +1185,6 @@ section { padding: 5.6rem 0; }
 
 .product-card:hover .product-card__desc { color: #d4d4d8; }
 
-.product-card[data-product="archlytics"] { --product-accent: rgba(59, 130, 246, 0.35); }
 .product-card[data-product="invenor"] { --product-accent: rgba(34, 197, 94, 0.32); }
 .product-card[data-product="mining360"] { --product-accent: rgba(245, 158, 11, 0.34); }
 .product-card[data-product="pharmatic"] { --product-accent: rgba(168, 85, 247, 0.32); }
@@ -1167,8 +1192,11 @@ section { padding: 5.6rem 0; }
 .product-card[data-product="learningtogether"] { --product-accent: rgba(139, 92, 246, 0.32); }
 .product-card[data-product="marketmine"] { --product-accent: rgba(240, 76, 62, 0.38); }
 .product-card[data-product="airontech"] { --product-accent: rgba(240, 76, 62, 0.32); }
+.product-card[data-product="dronie"] { --product-accent: rgba(56, 189, 248, 0.34); }
+.product-card[data-product="twinnie"] { --product-accent: rgba(45, 212, 191, 0.34); }
+.product-card[data-product="smartwarehouse"] { --product-accent: rgba(251, 146, 60, 0.34); }
+.product-card[data-product="aviatics"] { --product-accent: rgba(129, 140, 248, 0.34); }
 
-.product-card:hover[data-product="archlytics"] { box-shadow: 0 22px 50px rgba(59, 130, 246, 0.12); }
 .product-card:hover[data-product="invenor"] { box-shadow: 0 22px 50px rgba(34, 197, 94, 0.12); }
 .product-card:hover[data-product="mining360"] { box-shadow: 0 22px 50px rgba(245, 158, 11, 0.12); }
 .product-card:hover[data-product="pharmatic"] { box-shadow: 0 22px 50px rgba(168, 85, 247, 0.12); }
@@ -1176,6 +1204,10 @@ section { padding: 5.6rem 0; }
 .product-card:hover[data-product="learningtogether"] { box-shadow: 0 22px 50px rgba(139, 92, 246, 0.12); }
 .product-card:hover[data-product="marketmine"] { box-shadow: 0 22px 50px rgba(240, 76, 62, 0.18); }
 .product-card:hover[data-product="airontech"] { box-shadow: 0 22px 50px rgba(240, 76, 62, 0.14); }
+.product-card:hover[data-product="dronie"] { box-shadow: 0 22px 50px rgba(56, 189, 248, 0.14); }
+.product-card:hover[data-product="twinnie"] { box-shadow: 0 22px 50px rgba(45, 212, 191, 0.14); }
+.product-card:hover[data-product="smartwarehouse"] { box-shadow: 0 22px 50px rgba(251, 146, 60, 0.14); }
+.product-card:hover[data-product="aviatics"] { box-shadow: 0 22px 50px rgba(129, 140, 248, 0.14); }
 
 /* Contact */
 .contact {
@@ -1749,7 +1781,7 @@ section { padding: 5.6rem 0; }
   .process-grid,
   .capability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .products-more__panel { grid-template-columns: minmax(7.5rem, 10rem) 1fr; }
+  .products-more__panel { grid-column: auto; }
   .contact-card__layout { grid-template-columns: 1fr; }
   .contact-card__intro { border-right: none; border-bottom: 1px solid var(--line); }
   .hero-rig__inner { text-align: center; }
@@ -1828,15 +1860,7 @@ section { padding: 5.6rem 0; }
   .capability-grid,
   .product-grid,
   .contact-form__grid { grid-template-columns: 1fr; }
-  .products-more__panel {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-  .products-more__visual {
-    min-height: 6.2rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
+  .products-more__panel { grid-column: auto; min-height: 14rem; }
   .footer-inner { flex-direction: column; gap: 0.35rem; text-align: center; }
 }
 

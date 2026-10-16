@@ -1,0 +1,7 @@
+# Cloudflare Pages — marketandproducts.com
+# Deploy: conectar el repo en Cloudflare Dashboard (Workers & Pages → Create → Git)
+# o: npx wrangler pages deploy . --project-name=marketandproducts
+
+name = "marketandproducts"
+pages_build_output_dir = "."
+compatibility_date = "2025-10-01"

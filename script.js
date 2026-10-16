@@ -54,6 +54,10 @@
       'prod-badge-education': 'Education',
       'prod-badge-markets': 'Markets',
       'prod-badge-ai': 'AI',
+      'prod-badge-drones': 'Drones',
+      'prod-badge-twins': 'Twins',
+      'prod-badge-warehouse': 'Warehouse',
+      'prod-badge-aviation': 'Aviation',
       'hero-cta2': 'Start a conversation',
       'hero-metrics-label': 'Focus',
       'hero-highlight': 'Products',
@@ -116,8 +120,6 @@
       'products-more-tags': 'Mining · Pharma · Retail · AI · Logistics · Health · Energy · +',
       'prod-mining360-name': 'Mining 360',
       'prod-mining360-desc': 'End-to-end mine operations, compliance, and asset visibility in one place.',
-      'prod-archlytics-name': 'Archlytics',
-      'prod-archlytics-desc': 'Analytics and intelligence for industrial assets, risk, and performance.',
       'prod-pharmatic-name': 'Pharmalitycs',
       'prod-pharmatic-desc': 'Pharma workflows, pricing logic, and regulatory alignment for market access.',
       'prod-financel-name': 'Financel',
@@ -130,6 +132,14 @@
       'prod-invenor-desc': 'Inventory, procurement, and supply orchestration for industrial operations.',
       'prod-airontech-name': 'A.I.rontech',
       'prod-airontech-desc': 'Computer Vision & AI for Multi Industries',
+      'prod-dronie-name': 'Dronie',
+      'prod-dronie-desc': 'Drone control for critical assets',
+      'prod-twinnie-name': 'Twinnie',
+      'prod-twinnie-desc': 'Digital Twins and 360 models for vision and operations',
+      'prod-smartwarehouse-name': 'Smart Warehouse',
+      'prod-smartwarehouse-desc': 'Computer Vision for intelligent Warehouse',
+      'prod-aviatics-name': 'Aviatics',
+      'prod-aviatics-desc': 'Aviation security for energy and commodities assets',
       'product-flip-hint': 'Hover for details',
       'contact-title': 'Want to see our products?',
       'contact-label': 'Contact',
@@ -210,6 +220,10 @@
       'prod-badge-education': 'Educación',
       'prod-badge-markets': 'Mercados',
       'prod-badge-ai': 'IA',
+      'prod-badge-drones': 'Drones',
+      'prod-badge-twins': 'Twins',
+      'prod-badge-warehouse': 'Bodega',
+      'prod-badge-aviation': 'Aviación',
       'hero-cta2': 'Conversemos',
       'hero-metrics-label': 'Enfoque',
       'hero-highlight': 'Productos',
@@ -272,8 +286,6 @@
       'products-more-tags': 'Minería · Pharma · Retail · IA · Logística · Salud · Energía · +',
       'prod-mining360-name': 'Mining 360',
       'prod-mining360-desc': 'Operaciones mineras, cumplimiento y visibilidad de activos de punta a punta.',
-      'prod-archlytics-name': 'Archlytics',
-      'prod-archlytics-desc': 'Analítica e inteligencia para activos industriales, riesgo y desempeño.',
       'prod-pharmatic-name': 'Pharmalitycs',
       'prod-pharmatic-desc': 'Flujos farmacéuticos, precios y alineación regulatoria para acceso al mercado.',
       'prod-financel-name': 'Financel',
@@ -286,6 +298,14 @@
       'prod-invenor-desc': 'Inventario, compras y orquestación de abastecimiento para operaciones industriales.',
       'prod-airontech-name': 'A.I.rontech',
       'prod-airontech-desc': 'Visión computacional e IA para múltiples industrias',
+      'prod-dronie-name': 'Dronie',
+      'prod-dronie-desc': 'Control de drones para activos críticos',
+      'prod-twinnie-name': 'Twinnie',
+      'prod-twinnie-desc': 'Gemelos digitales y modelos 360 para visión y operaciones',
+      'prod-smartwarehouse-name': 'Smart Warehouse',
+      'prod-smartwarehouse-desc': 'Visión computacional para bodegas inteligentes',
+      'prod-aviatics-name': 'Aviatics',
+      'prod-aviatics-desc': 'Seguridad aérea para activos de energía y commodities',
       'product-flip-hint': 'Pasa el cursor para ver detalle',
       'contact-title': '¿Quieres ver nuestros productos?',
       'contact-label': 'Contacto',
@@ -448,11 +468,9 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const msg = getMsg();
-      const langNow = normalizeLang(localStorage.getItem('mp-lang'));
 
       const name = form.name.value.trim();
       const email = form.email.value.trim();
-      const company = form.company.value.trim();
       const industry = form.industry.value;
       const message = form.message.value.trim();
 
@@ -461,19 +479,7 @@
         return;
       }
 
-      const industryLabel =
-        form.industry.options[form.industry.selectedIndex]?.textContent || industry;
-
-      const payload = new FormData();
-      payload.append('name', name);
-      payload.append('email', email);
-      payload.append('company', company);
-      payload.append('industry', industry);
-      payload.append('industry_label', industryLabel);
-      payload.append('message', message);
-      payload.append('lang', langNow);
-      payload.append('website', form.website?.value || '');
-
+      // UI-only for now — no backend send
       submitBtn?.classList.add('is-loading');
       if (submitBtn) {
         const label = submitBtn.querySelector('[data-i18n="contact-submit"]');
@@ -481,30 +487,17 @@
       }
       setStatus(msg['contact-sending'], 'success');
 
-      try {
-        const res = await fetch('contact.php', {
-          method: 'POST',
-          body: payload,
-          headers: { Accept: 'application/json' }
-        });
-        const data = await res.json().catch(() => ({}));
+      await new Promise((r) => setTimeout(r, 450));
 
-        if (!res.ok || !data.ok) {
-          throw new Error(data.error || 'send_failed');
-        }
+      form.reset();
+      setStatus('', '');
+      statusEl?.classList.add('hidden');
+      openContactModal();
 
-        form.reset();
-        setStatus('', '');
-        statusEl?.classList.add('hidden');
-        openContactModal();
-      } catch {
-        setStatus(msg['contact-send-error'], 'error');
-      } finally {
-        submitBtn?.classList.remove('is-loading');
-        if (submitBtn) {
-          const label = submitBtn.querySelector('[data-i18n="contact-submit"]');
-          if (label) label.textContent = msg['contact-submit'];
-        }
+      submitBtn?.classList.remove('is-loading');
+      if (submitBtn) {
+        const label = submitBtn.querySelector('[data-i18n="contact-submit"]');
+        if (label) label.textContent = msg['contact-submit'];
       }
     });
   }
